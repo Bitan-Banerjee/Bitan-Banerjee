@@ -32,7 +32,7 @@
 
 <img alt="Sass" src="https://img.shields.io/badge/Sass-D36786?style=for-the-badge&labelColor=black&logo=Sass&logoColor=white"/>
 
-<br>
+
 
 
 <img alt="MySQL" src="https://img.shields.io/badge/MySQL-DE8A00?style=for-the-badge&labelColor=black&logo=MySQL&logoColor=white"/>
