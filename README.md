@@ -69,6 +69,6 @@
 <br>
 <br>
 
-<h1 align="center">𝗝𝗼𝗸𝗲 𝗼𝗳 𝘁𝗵𝗲 𝗱𝗮𝘆</h2>
+<h1 align="center">Just kidding</h2>
 <p align="center"><img src="https://readme-jokes.vercel.app/api"/></p>
 
