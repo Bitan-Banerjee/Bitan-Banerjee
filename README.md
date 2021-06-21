@@ -16,28 +16,26 @@
 <h1 align="center">Skills</h2>
 
 <p align="center">
-<img alt="Java" src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&labelColor=black&logo=java&logoColor=white"/>
+<img alt="Java" src="https://user-images.githubusercontent.com/53335079/122720956-b727e980-d28d-11eb-9eab-ed0fb38ef7c2.png" height="28"/>
+ 
+<img alt="C" src="https://user-images.githubusercontent.com/53335079/122716618-200c6300-d288-11eb-8be8-cfb5c6334499.png" height="28"/>
+ 
+ <img alt="C++" src="https://user-images.githubusercontent.com/53335079/122716900-7d081900-d288-11eb-97fd-feaf85180711.png" height="28"/>
+ 
+<img alt="javascript" src="https://user-images.githubusercontent.com/53335079/122715959-4978bf00-d287-11eb-83e8-c172bd77bdf9.png" height="28"/>
+ 
+<img alt="JQuery" src="https://user-images.githubusercontent.com/53335079/122721292-1c7bda80-d28e-11eb-9dd1-c808dca7096b.png" height="28"/>
+ 
+<img alt="HTML" src="https://user-images.githubusercontent.com/53335079/122716950-901ae900-d288-11eb-905f-338448976bba.png" height="28"/>
+ 
+<img alt="CSS" src="https://user-images.githubusercontent.com/53335079/122717165-dc662900-d288-11eb-8a95-c023ef19c565.png" height="28"/>
+ 
+<img alt="SASS" src="https://user-images.githubusercontent.com/53335079/122717262-fd2e7e80-d288-11eb-8543-0ff1c8d7a883.png" height="28"/>
 
-<img alt="C" src="https://img.shields.io/badge/c-03599C?style=for-the-badge&labelColor=black&logo=c&logoColor=white"/>
-
-<img alt="C++" src="https://img.shields.io/badge/c++-9C033A?style=for-the-badge&labelColor=black&logo=c%2B%2B&logoColor=white"/>
-
-<img alt="JavaScript" src="https://img.shields.io/badge/javascript-DFB317?style=for-the-badge&labelColor=black&logo=javascript&logoColor=yellow"/>
-  
-<img alt="JQuery" src="https://img.shields.io/badge/JQuery-2489BA?style=for-the-badge&labelColor=black&logo=JQuery&logoColor=white"/>
-
-<img alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&labelColor=black&logo=html5&logoColor=white"/>
-
-<img alt="CSS3" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&labelColor=black&logo=css3&logoColor=white"/>
-
-<img alt="Sass" src="https://img.shields.io/badge/Sass-D36786?style=for-the-badge&labelColor=black&logo=Sass&logoColor=white"/>
-
-
-
-
-<img alt="MySQL" src="https://img.shields.io/badge/MySQL-DE8A00?style=for-the-badge&labelColor=black&logo=MySQL&logoColor=white"/>
-<img alt="Figma" src="https://img.shields.io/badge/Figma-A259FF?style=for-the-badge&labelColor=black&logo=Figma&logoColor=white"/>
-
+<img alt="MySQL" src="https://user-images.githubusercontent.com/53335079/122721166-f8b89480-d28d-11eb-8b08-9f0ea99fd31f.png" height="28"/>
+ 
+ <img alt="FIGMA" src="https://user-images.githubusercontent.com/53335079/122719509-e3db0180-d28b-11eb-9acd-c709f257150b.png" height="28"/>
+ 
 
 
 </p>
@@ -52,16 +50,16 @@
 <p align="center">
 
   <a href="https://www.linkedin.com/in/bitan-banerjee">
-<img  alt="Linkedin" src="https://img.shields.io/badge/Linkdin-0A66C2?style=for-the-badge&labelColor=black&logo=Linkedin&logoColor=white"/>
+<img  alt="Linkedin" src="https://user-images.githubusercontent.com/53335079/122721925-ce1b0b80-d28e-11eb-8acb-3a6f73298c3f.png" height="28"/>
   </a>
 
   <a href="mailto:bitanbanerjee06@gmail.com">
-<img  alt="Gmail" src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&labelColor=black&logo=Gmail&logoColor=white"/>
+<img  alt="Gmail" src="https://user-images.githubusercontent.com/53335079/122721746-a6c43e80-d28e-11eb-8a88-de6e5312c64a.png" height="28"/>
   </a>
   
   
 <a href="https://t.me/Bitan_Banerjee_Official" >
-<img  alt="Telegram" src="https://img.shields.io/badge/Telegram-0A66C2?style=for-the-badge&labelColor=black&logo=Telegram&logoColor=white"/>
+<img  alt="Telegram" src="https://user-images.githubusercontent.com/53335079/122722102-f86cc900-d28e-11eb-9d0d-f97d102791e3.png" height="28"/>
   </a>
 </p>
 
