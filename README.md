@@ -50,16 +50,16 @@
 <p align="center">
 
   <a href="https://www.linkedin.com/in/bitan-banerjee">
-<img  src="https://user-images.githubusercontent.com/53335079/122721925-ce1b0b80-d28e-11eb-8acb-3a6f73298c3f.png" width="124px"/>
+<img  src="https://user-images.githubusercontent.com/53335079/122721925-ce1b0b80-d28e-11eb-8acb-3a6f73298c3f.png" width="104px"/>
   </a>
 
   <a href="mailto:bitanbanerjee06@gmail.com">
-<img  src="https://user-images.githubusercontent.com/53335079/122721746-a6c43e80-d28e-11eb-8a88-de6e5312c64a.png" width="112px"/>
+<img  src="https://user-images.githubusercontent.com/53335079/122721746-a6c43e80-d28e-11eb-8a88-de6e5312c64a.png" width="92px"/>
   </a>
   
   
 <a href="https://t.me/Bitan_Banerjee_Official" >
-<img   src="https://user-images.githubusercontent.com/53335079/122722102-f86cc900-d28e-11eb-9d0d-f97d102791e3.png" width="152px"/>
+<img   src="https://user-images.githubusercontent.com/53335079/122722102-f86cc900-d28e-11eb-9d0d-f97d102791e3.png" width="132px"/>
   </a>
 </p>
 
