@@ -1,66 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500" width="850" height="500">
-  <defs>
-    <style>
-      .bg { fill: #0f0d0b; stroke: #3d3228; stroke-width: 1; rx: 8; }
-      .top { fill: #241e18; }
-      .txt { font-family: 'Courier New', Courier, monospace; font-size: 14px; fill: #d4c4b0; }
-      .prompt { fill: #c8a96e; }
-      .folder { fill: #e8834a; font-weight: bold; }
-      .branch { fill: #5c534b; }
-      .title { font-family: 'Courier New', Courier, monospace; font-size: 13px; fill: #8a7a6a; letter-spacing: 1px; }
-    </style>
-  </defs>
-  
-  <rect class="bg" width="100%" height="100%" />
-  <path class="top" d="M0 8a8 8 0 0 1 8-8h834a8 8 0 0 1 8 8v28H0V8z" />
-  <line x1="0" y1="36" x2="850" y2="36" stroke="#3d3228" stroke-width="1" />
-  
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420">
+  <defs><style>.mono { font-family: 'Courier New', Courier, monospace; }</style></defs>
+
+  <rect width="800" height="420" fill="#0f0d0b" stroke="#3d3228" stroke-width="1"/>
+  <rect width="800" height="36" fill="#241e18"/>
+  <line x1="0" y1="36" x2="800" y2="36" stroke="#3d3228" stroke-width="1"/>
+  <polygon points="0,0 14,0 0,14" fill="#e8834a" opacity="0.6"/>
   <circle cx="24" cy="18" r="6" fill="#ff5f57"/>
   <circle cx="42" cy="18" r="6" fill="#febc2e"/>
   <circle cx="60" cy="18" r="6" fill="#28c840"/>
   
-  <text x="425" y="23" class="title" text-anchor="middle">bash — ls -la /skills/</text>
+  <text x="400" y="23" text-anchor="middle" class="mono" font-size="11" fill="#8a7a6a" letter-spacing="1">bash — ls -la /skills/</text>
 
-  <text x="30" y="75" class="txt" xml:space="preserve">
-    <tspan x="30" dy="0"><tspan class="folder">~ </tspan><tspan class="prompt">$ </tspan>ls -la /skills/</tspan>
-    <tspan x="30" dy="30"><tspan class="folder">skills/</tspan></tspan>
+  <text x="24" y="60" class="mono" font-size="12" fill="#e8834a">~</text>
+  <text x="36" y="60" class="mono" font-size="12" fill="#c8a96e">$</text>
+  <text x="48" y="60" class="mono" font-size="12" fill="#f5ede0">ls -la /skills/</text>
 
-    <tspan x="30" dy="24"><tspan class="branch">├── </tspan><tspan class="folder">languages/</tspan></tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   ├── </tspan>Python</tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   └── </tspan>SQL</tspan>
+  <line x1="360" y1="80" x2="360" y2="400" stroke="#3d3228" stroke-dasharray="4" />
 
-    <tspan x="30" dy="24"><tspan class="branch">├── </tspan><tspan class="folder">databases/</tspan></tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   ├── </tspan>DB2</tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   └── </tspan>MS SQL Server</tspan>
+  <text x="24" y="86" class="mono" font-size="12" fill="#e8834a">skills/</text>
+  
+  <text x="24" y="106" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">├── </tspan><tspan fill="#e8834a">languages/</tspan></text>
+  <text x="24" y="126" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">Python</tspan></text>
+  <text x="24" y="146" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   └── </tspan><tspan fill="#c8a96e">SQL</tspan></text>
 
-    <tspan x="30" dy="24"><tspan class="branch">├── </tspan><tspan class="folder">data_processing/</tspan></tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   ├── </tspan>PySpark</tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   ├── </tspan>ETL / ELT</tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   ├── </tspan>Data Warehousing</tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   ├── </tspan>Data Pipelining</tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   ├── </tspan>Big Data</tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   ├── </tspan>Databricks</tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   ├── </tspan>Qlik Attunity</tspan>
-    <tspan x="30" dy="24"><tspan class="branch">│   └── </tspan>IICS</tspan>
-  </text>
+  <text x="24" y="166" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">├── </tspan><tspan fill="#e8834a">databases/</tspan></text>
+  <text x="24" y="186" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">DB2</tspan></text>
+  <text x="24" y="206" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   └── </tspan><tspan fill="#c8a96e">MS SQL Server</tspan></text>
 
-  <text x="420" y="129" class="txt" xml:space="preserve">
-    <tspan x="420" dy="0"><tspan class="branch">├── </tspan><tspan class="folder">aws_cloud/</tspan></tspan>
-    <tspan x="420" dy="24"><tspan class="branch">│   ├── </tspan>Step Functions</tspan>
-    <tspan x="420" dy="24"><tspan class="branch">│   ├── </tspan>Lambda</tspan>
-    <tspan x="420" dy="24"><tspan class="branch">│   ├── </tspan>Glue</tspan>
-    <tspan x="420" dy="24"><tspan class="branch">│   ├── </tspan>SQS</tspan>
-    <tspan x="420" dy="24"><tspan class="branch">│   ├── </tspan>S3</tspan>
-    <tspan x="420" dy="24"><tspan class="branch">│   ├── </tspan>RDS</tspan>
-    <tspan x="420" dy="24"><tspan class="branch">│   ├── </tspan>DynamoDB</tspan>
-    <tspan x="420" dy="24"><tspan class="branch">│   └── </tspan>Redshift</tspan>
+  <text x="24" y="226" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">├── </tspan><tspan fill="#e8834a">data_processing/</tspan></text>
+  <text x="24" y="246" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">PySpark</tspan></text>
+  <text x="24" y="266" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">ETL / ELT</tspan></text>
+  <text x="24" y="286" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">Data Warehousing</tspan></text>
+  <text x="24" y="306" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">Data Pipelining</tspan></text>
+  <text x="24" y="326" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">Big Data</tspan></text>
+  <text x="24" y="346" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">Databricks</tspan></text>
+  <text x="24" y="366" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">Qlik Attunity</tspan></text>
+  <text x="24" y="386" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   └── </tspan><tspan fill="#c8a96e">IICS</tspan></text>
 
-    <tspan x="420" dy="24"><tspan class="branch">└── </tspan><tspan class="folder">ai_tools/</tspan></tspan>
-    <tspan x="420" dy="24"><tspan class="branch">    ├── </tspan>Claude</tspan>
-    <tspan x="420" dy="24"><tspan class="branch">    ├── </tspan>ChatGPT</tspan>
-    <tspan x="420" dy="24"><tspan class="branch">    ├── </tspan>Gemini</tspan>
-    <tspan x="420" dy="24"><tspan class="branch">    └── </tspan>Ollama</tspan>
-  </text>
+  <text x="400" y="106" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">├── </tspan><tspan fill="#e8834a">aws_cloud/</tspan></text>
+  <text x="400" y="126" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">Step Functions</tspan></text>
+  <text x="400" y="146" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">Lambda</tspan></text>
+  <text x="400" y="166" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">Glue</tspan></text>
+  <text x="400" y="186" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">SQS</tspan></text>
+  <text x="400" y="206" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">S3</tspan></text>
+  <text x="400" y="226" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">RDS</tspan></text>
+  <text x="400" y="246" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">DynamoDB</tspan></text>
+  <text x="400" y="266" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   └── </tspan><tspan fill="#c8a96e">Redshift</tspan></text>
 
-  <line x1="380" y1="90" x2="380" y2="475" stroke="#3d3228" stroke-dasharray="4" />
+  <text x="400" y="286" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">└── </tspan><tspan fill="#e8834a">ai_tools/</tspan></text>
+  <text x="400" y="306" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">    ├── </tspan><tspan fill="#c8a96e">Claude</tspan></text>
+  <text x="400" y="326" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">    ├── </tspan><tspan fill="#c8a96e">ChatGPT</tspan></text>
+  <text x="400" y="346" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">    ├── </tspan><tspan fill="#c8a96e">Gemini</tspan></text>
+  <text x="400" y="366" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">    └── </tspan><tspan fill="#c8a96e">Ollama</tspan></text>
+
 </svg>
