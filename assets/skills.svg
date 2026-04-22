@@ -47,10 +47,10 @@
   <text x="400" y="246" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">DynamoDB</tspan></text>
   <text x="400" y="266" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   └── </tspan><tspan fill="#c8a96e">Redshift</tspan></text>
 
-  <text x="400" y="286" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">└── </tspan><tspan fill="#e8834a">ai_tools/</tspan></text>
-  <text x="400" y="306" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">    ├── </tspan><tspan fill="#c8a96e">Claude</tspan></text>
-  <text x="400" y="326" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">    ├── </tspan><tspan fill="#c8a96e">ChatGPT</tspan></text>
-  <text x="400" y="346" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">    ├── </tspan><tspan fill="#c8a96e">Gemini</tspan></text>
-  <text x="400" y="366" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">    └── </tspan><tspan fill="#c8a96e">Ollama</tspan></text>
+  <text x="400" y="286" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">├── </tspan><tspan fill="#e8834a">ai_tools/</tspan></text>
+  <text x="400" y="306" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">Claude</tspan></text>
+  <text x="400" y="326" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">ChatGPT</tspan></text>
+  <text x="400" y="346" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   ├── </tspan><tspan fill="#c8a96e">Gemini</tspan></text>
+  <text x="400" y="366" class="mono" font-size="12" xml:space="preserve"><tspan fill="#8a7a6a">│   └── </tspan><tspan fill="#c8a96e">Ollama</tspan></text>
 
 </svg>
