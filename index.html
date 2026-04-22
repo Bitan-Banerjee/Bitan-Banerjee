@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bitan Banerjee – GitHub Profile README</title>
+<title>Bitan Banerjee – Terminal Portfolio</title>
 <style>
   :root {
     --bg:          #0f0d0b;
@@ -30,6 +30,8 @@
     min-height: 100vh;
     padding: 32px 16px;
   }
+  
+  /* BASE GRID */
   body::before {
     content: '';
     position: fixed; inset: 0;
@@ -39,18 +41,46 @@
     background-size: 16px 16px;
     pointer-events: none; z-index: 0;
   }
+
+  /* AUTHENTIC CRT SCANLINES & FLICKER */
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background: 
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+      linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 3px, 3px 100%;
+    pointer-events: none;
+    z-index: 998;
+    animation: flicker 0.15s infinite;
+    opacity: 0.8;
+  }
+
+  @keyframes flicker {
+    0% { opacity: 0.8; }
+    50% { opacity: 0.75; }
+    100% { opacity: 0.8; }
+  }
+
   .readme-wrap {
     position: relative; z-index: 1;
     max-width: 820px; margin: 0 auto;
     display: flex; flex-direction: column; gap: 20px;
   }
 
-  /* HERO */
+  /* HERO HEADER BLOCK */
   .hero-block {
     background: var(--surface);
     border: 1px solid var(--border);
     padding: 28px 28px 22px;
     position: relative; overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .hero-block:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(232, 131, 74, 0.08);
+    transform: translateY(-2px);
+    z-index: 10;
   }
   .hero-block::before, .hero-block::after {
     content: ''; position: absolute;
@@ -62,26 +92,40 @@
   .hero-block::before { top:0; left:0; }
   .hero-block::after  { bottom:0; right:0; transform:rotate(180deg); }
 
+  .hero-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 4px;
+  }
+
   .pixel-avatar {
     display: grid;
     grid-template-columns: repeat(9, var(--pixel-size));
-    grid-template-rows: repeat(9, var(--pixel-size));
-    gap: 1px; float: left;
-    margin-right: 20px; margin-bottom: 4px;
+    grid-template-rows: repeat(12, var(--pixel-size));
+    gap: 1px; flex-shrink: 0;
     image-rendering: pixelated;
+    animation: float 3s ease-in-out infinite;
   }
-  .pixel-avatar .px { width:var(--pixel-size); height:var(--pixel-size); background:var(--border); }
-  .pixel-avatar .px.on  { background: var(--accent); }
-  .pixel-avatar .px.dim { background: #3a2510; }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
 
+  .pixel-avatar .px { width:var(--pixel-size); height:var(--pixel-size); background:var(--border); }
+  .pixel-avatar .px.on  { background: var(--accent); box-shadow: 0 0 4px var(--accent); }
+  
   .hero-ascii {
     font-size: 12px; line-height: 1.55;
     color: var(--text-bright);
-    white-space: pre; overflow: hidden;
+    white-space: pre; overflow-x: auto;
   }
+  
+  /* PHOSPHOR GLOW EFFECTS */
   .hero-ascii .dim { color: var(--text-dim); }
-  .hero-ascii .hi  { color: var(--accent); font-weight: bold; }
-  .hero-ascii .gr  { color: var(--warm); }
+  .hero-ascii .hi  { color: var(--accent); font-weight: bold; text-shadow: 0 0 6px rgba(232, 131, 74, 0.5); }
+  .hero-ascii .gr  { color: var(--warm); text-shadow: 0 0 5px rgba(200, 169, 110, 0.4); }
 
   .stat-row {
     display: grid; grid-template-columns: repeat(3,1fr);
@@ -91,12 +135,30 @@
     background: var(--surface2);
     border: 1px solid var(--border);
     padding: 10px 12px; text-align: center;
+    transition: all 0.2s ease;
   }
-  .stat-num { font-size: 22px; color: var(--accent); font-weight: bold; }
+  .stat-block:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(232, 131, 74, 0.05);
+  }
+  .stat-num { font-size: 22px; color: var(--accent); font-weight: bold; text-shadow: 0 0 8px rgba(232, 131, 74, 0.6); }
   .stat-lbl { font-size: 10px; color: var(--text-dim); margin-top: 2px; letter-spacing: 0.08em; }
 
-  /* TERMINAL */
-  .term { border: 1px solid var(--border); overflow: hidden; position: relative; }
+  /* INTERACTIVE TERMINAL WINDOWS */
+  .term { 
+    border: 1px solid var(--border); 
+    overflow: hidden; 
+    position: relative; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .term:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(232, 131, 74, 0.08);
+    transform: translateY(-2px);
+    z-index: 10;
+  }
+  
   .term::before {
     content: ''; position: absolute; top:0; left:0; z-index:2;
     width:0; height:0; border-style:solid;
@@ -104,13 +166,17 @@
     border-color: var(--accent) transparent transparent transparent;
   }
 
-  /* dots are inline — NO absolute positioning */
   .term-bar {
     background: var(--surface2);
     border-bottom: 1px solid var(--border);
     padding: 8px 14px;
     display: flex; align-items: center; gap: 10px;
+    transition: background 0.3s ease;
   }
+  .term:hover .term-bar {
+    background: #1f140e;
+  }
+
   .term-dots {
     display: flex; gap: 5px; align-items: center;
     flex-shrink: 0; padding-left: 8px;
@@ -125,30 +191,45 @@
   .term-title {
     color: var(--text-dim); font-size: 11px;
     letter-spacing: 0.05em; flex: 1;
-    text-align: center; padding-right: 38px;
+    text-align: center; padding-right: 58px;
   }
 
   .term-body { background: var(--surface); padding: 18px 20px; font-size: 13px; line-height: 1.7; }
 
+  /* COMMAND LINE & TYPING EFFECT */
   .cmd-line {
     margin-bottom: 12px; font-size: 13px;
     display: flex; align-items: center; gap: 6px;
   }
-  .cmd-line::before {
-    content: '▮'; color: var(--accent); font-size: 10px;
-    animation: blink 1.2s step-end infinite;
+  .cmd-prompt { color: var(--accent); text-shadow: 0 0 4px currentColor; }
+  .cmd-path   { color: var(--warm); text-shadow: 0 0 4px currentColor; }
+  
+  .cmd-text { 
+    color: var(--text-bright);
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 6px solid var(--accent);
+    animation: typing 1.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    padding-right: 4px;
+    line-height: 1.1; 
   }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-  .cmd-prompt { color: var(--accent); }
-  .cmd-path   { color: var(--warm); }
-  .cmd-text   { color: var(--text-bright); }
+  @keyframes typing {
+    from { max-width: 0 }
+    to { max-width: 100% }
+  }
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent); }
+  }
 
-  .output-text { color: var(--text); font-size: 13px; line-height: 1.8; }
-  .output-text b { color: var(--text-bright); }
+  .output-text { color: var(--text); font-size: 13px; line-height: 1.8; animation: fadeIn 2s ease forwards; opacity: 0; }
+  @keyframes fadeIn { 0% { opacity: 0; } 50% {opacity: 0;} 100% { opacity: 1; } }
+  .output-text b { color: var(--text-bright); text-shadow: 0 0 2px rgba(255,255,255,0.2); }
 
   /* BADGES */
-  .badge-section { margin-bottom: 14px; }
+  .badge-section { margin-bottom: 14px; animation: fadeIn 2s ease forwards; opacity: 0; }
   .badge-section:last-child { margin-bottom: 0; }
   .badge-section-label {
     font-size: 10px; color: var(--text-dim);
@@ -161,69 +242,118 @@
     background: var(--surface2); border: 1px solid var(--border);
     color: var(--text-bright); font-size: 11px;
     padding: 4px 10px 4px 8px;
-    transition: border-color .15s, color .15s, background .15s;
+    transition: all 0.2s ease;
     cursor: default; letter-spacing: 0.03em; text-decoration: none;
     font-family: var(--font-mono);
   }
   .badge:hover {
     border-color: var(--accent); color: var(--accent);
     background: rgba(232,131,74,0.07);
+    transform: scale(1.05); /* Restored Micro-animation scale */
+    box-shadow: 0 2px 8px rgba(232, 131, 74, 0.1);
   }
   .badge svg { width:13px; height:13px; fill:currentColor; flex-shrink:0; opacity:.7; }
   .badge:hover svg { opacity:1; }
 
-  /* LOG ITEMS */
-  .log-item {
-    display: flex; gap: 10px;
-    padding: 7px 0; border-bottom: 1px solid rgba(61,50,40,0.6);
-    align-items: flex-start;
+  /* ARCHITECTURE PIPELINE */
+  .pipeline-wrap { overflow-x: auto; padding: 10px 0; white-space: nowrap; font-size: 13px; animation: fadeIn 2s ease forwards; opacity: 0; }
+  .pipe-node { 
+    display: inline-block; padding: 4px 8px; border: 1px solid var(--border); 
+    background: var(--surface2); color: var(--accent); cursor: pointer; 
+    font-weight: bold; transition: all 0.2s ease; border-radius: 2px;
+  }
+  .pipe-node:hover {
+    border-color: var(--accent); 
+    background: var(--accent); /* Inverted background */
+    color: var(--surface); /* Inverted text */
+    text-shadow: none;
+    transform: translateY(-2px);
+  }
+  .pipe-line { color: var(--text-dim); padding: 0 4px; font-weight: bold; transition: all 0.2s ease; }
+  .pipeline-wrap:hover .pipe-line { color: var(--accent); text-shadow: 0 0 5px var(--accent); }
+  .pipe-tooltip { margin-top: 15px; color: var(--text-dim); height: 18px; font-style: italic; }
+
+  /* INTERACTIVE DIRECTORY TREE */
+  .tree-wrap { animation: fadeIn 2s ease forwards; opacity: 0; margin-top: 10px; }
+  .tree-item { margin-bottom: 6px; }
+  .tree-folder {
+    color: var(--accent); cursor: pointer; user-select: none; font-weight: bold; 
+    display: inline-block; padding: 4px 6px; border: 1px solid transparent; 
+    transition: all 0.2s ease; border-radius: 2px;
+  }
+  .tree-folder:hover { 
+    background: rgba(232, 131, 74, 0.05); text-shadow: 0 0 5px rgba(232, 131, 74, 0.4); 
+  }
+  .toggle-icon { display: inline-block; width: 24px; color: var(--text-dim); font-weight: normal; }
+  .tree-item.open .toggle-icon { color: var(--warm); }
+  .tree-item.open .tree-folder { color: var(--warm); }
+  
+  .tree-content { 
+    display: none; color: var(--text); padding-left: 28px; 
+    border-left: 1px dashed var(--border); margin-left: 12px; 
+    padding-top: 6px; padding-bottom: 10px; margin-top: 4px; line-height: 1.6;
+  }
+  .tree-content b { color: var(--text-bright); text-shadow: 0 0 2px rgba(255,255,255,0.2); }
+  .tree-item.open .tree-content { display: block; animation: fadeIn 0.3s ease forwards; }
+
+  /* MISC TAGS */
+  .log-item { 
+    display: flex; gap: 10px; padding: 9px 6px; border-bottom: 1px solid rgba(61,50,40,0.6); align-items: flex-start; 
+    transition: all 0.2s ease;
+    border-radius: 2px;
+  }
+  .log-item:hover {
+    background: rgba(232, 131, 74, 0.04);
+    transform: translateX(4px);
+    border-bottom-color: var(--accent);
   }
   .log-item:last-child { border-bottom: none; }
   .log-tag {
-    background: var(--surface2); border: 1px solid var(--border);
-    color: var(--accent); font-size: 10px;
-    padding: 2px 7px; white-space: nowrap; flex-shrink: 0; letter-spacing: 0.05em;
+    background: var(--surface2); border: 1px solid var(--border); color: var(--accent); font-size: 10px;
+    padding: 2px 7px; white-space: nowrap; flex-shrink: 0; letter-spacing: 0.05em; transition: all 0.2s ease;
+  }
+  .log-item:hover .log-tag {
+    background: var(--accent); /* Inverted background */
+    color: var(--surface); /* Inverted text */
+    border-color: var(--accent);
   }
   .log-tag.green { color: var(--warm);  border-color: #3a2f10; background: #1a1608; }
   .log-tag.warn  { color: #e8c44a; border-color: #4a3a10; background: #1e1a08; }
+  
+  .log-item:hover .log-tag.green { background: var(--warm); color: var(--surface); border-color: var(--warm); }
+  .log-item:hover .log-tag.warn { background: #e8c44a; color: var(--surface); border-color: #e8c44a; }
+
   .log-val { color: var(--text); font-size: 13px; line-height: 1.65; }
-  .log-val b { color: var(--text-bright); }
+  .log-val b { color: var(--text-bright); text-shadow: 0 0 2px rgba(255,255,255,0.2); }
 
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
-  .readme-wrap::after {
-    content: ''; position: fixed; inset: 0;
-    background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.05) 2px,rgba(0,0,0,0.05) 4px);
-    pointer-events: none; z-index: 999;
-  }
-  .cursor { display:inline-block; animation: blink .8s step-end infinite; }
 </style>
 </head>
 <body>
 <div class="readme-wrap">
 
-  <!-- HERO -->
   <div class="hero-block">
-    <div class="pixel-avatar" id="pxav"></div>
-    <div class="hero-ascii">
-<span class="dim">┌───────────────────────────────────────────────┐</span>
+    <div class="hero-content">
+      <div class="pixel-avatar" id="pxav"></div>
+      <div class="hero-ascii">
+<span class="dim">┌─────────────────────────────────────────────────────────────┐</span>
 <span class="hi">██</span>
 <span class="dim">  </span><span class="hi">  ██</span>     <span class="hi">Bitan Banerjee</span> <span class="dim">CLI</span> <span class="gr">v3.8.0</span>
 <span class="dim">    </span><span class="hi">  ██</span>
 <span class="dim">    </span><span class="hi">  ██</span>   <span class="dim">Signed in with:</span> <span class="gr">banerjeebitan@outlook.com</span> <span class="dim">/auth</span>
-<span class="dim">  </span><span class="hi">  ██</span>     <span class="dim">Plan:</span> Data Engineer <span class="dim">(Finance &amp; Healthcare)</span> <span class="dim">/root</span>
-<span class="hi">██</span>         <span class="dim">Status:</span> <span class="gr">"Baking data into the science of tomorrow."</span> <span class="cursor">█</span>
-<span class="dim">└───────────────────────────────────────────────┘</span></div>
-    <div style="clear:both"></div>
+<span class="dim">  </span><span class="hi">  ██</span>     <span class="dim">Plan:</span> Data Engineer <span class="dim">/root</span>
+<span class="hi">██</span>         <span class="dim">Status:</span> <span class="gr">"have work experience in finance and healthcare industries."</span> <span class="hi">█</span>
+<span class="dim">└─────────────────────────────────────────────────────────────┘</span></div>
+    </div>
     <div class="stat-row">
-      <div class="stat-block"><div class="stat-num">3.8</div><div class="stat-lbl">YRS EXPERIENCE</div></div>
+      <div class="stat-block"><div class="stat-num" id="exp-val-1">3.8</div><div class="stat-lbl">YRS EXPERIENCE</div></div>
       <div class="stat-block"><div class="stat-num">500+</div><div class="stat-lbl">TABLES IN SCOPE</div></div>
       <div class="stat-block"><div class="stat-num">35%</div><div class="stat-lbl">YOY BI GROWTH</div></div>
     </div>
   </div>
 
-  <!-- cat user_profile -->
   <div class="term">
     <div class="term-bar">
       <div class="term-dots">
@@ -233,11 +363,36 @@
     </div>
     <div class="term-body">
       <div class="cmd-line"><span class="cmd-prompt">~</span><span class="cmd-path">$</span><span class="cmd-text">cat user_profile.txt</span></div>
-      <div class="output-text">Data Engineer with <b>3.8 years</b> of experience designing and modernizing complex data ecosystems. Proven expertise in <b>mainframe modernization</b>, architecting <b>serverless AWS pipelines</b>, and authoring <b>HLD/LLD</b> documentation. Skilled in <b>PySpark</b>, Python, and SQL with a focus on transactional integrity and workflow optimization.</div>
+      <div class="output-text">Data Engineer with <b id="exp-val-2">3.8 years</b> of experience designing and modernizing complex data ecosystems. Proven expertise in <b>mainframe modernization</b>, architecting <b>serverless AWS pipelines</b>, and authoring <b>HLD/LLD</b> documentation. Skilled in <b>PySpark</b>, Python, and SQL with a focus on transactional integrity and workflow optimization.</div>
     </div>
   </div>
 
-  <!-- ls tech_stack -->
+  <div class="term">
+    <div class="term-bar">
+      <div class="term-dots">
+        <div class="term-dot r"></div><div class="term-dot y"></div><div class="term-dot g"></div>
+      </div>
+      <span class="term-title">bash — aws_pipeline_arch.sh</span>
+    </div>
+    <div class="term-body">
+      <div class="cmd-line"><span class="cmd-prompt">~</span><span class="cmd-path">$</span><span class="cmd-text">./display_architecture.sh --visualize</span></div>
+      <div class="pipeline-wrap">
+        <span class="pipe-node" onmouseover="showTip('Extracting legacy Mainframe DB2 / MS SQL systems.')" onmouseout="hideTip()">[ DATA SOURCES ]</span>
+        <span class="pipe-line">───></span>
+        <span class="pipe-node" onmouseover="showTip('AWS Glue Serverless ETL processing 500+ tables.')" onmouseout="hideTip()">[ AWS GLUE ]</span>
+        <span class="pipe-line">═══></span>
+        <span class="pipe-node" onmouseover="showTip('S3 Data Lake / Intermediate Storage.')" onmouseout="hideTip()">[ AMAZON S3 ]</span>
+        <span class="pipe-line">───></span>
+        <span class="pipe-node" onmouseover="showTip('Complex data merging and workflow logic orchestration.')" onmouseout="hideTip()">[ STEP FUNCTIONS ]</span>
+        <span class="pipe-line">───></span>
+        <span class="pipe-node" onmouseover="showTip('ACID-compliant processing, rollback, and re-triggering.')" onmouseout="hideTip()">[ SPARK / LAMBDA ]</span>
+        <span class="pipe-line">═══></span>
+        <span class="pipe-node" onmouseover="showTip('Final persistence layer for Analytics and BI.')" onmouseout="hideTip()">[ DYNAMO / REDSHIFT / AURORA ]</span>
+      </div>
+      <div id="pipe-tooltip" class="pipe-tooltip">> SYSTEM STANDBY... Hover over a node to inspect.</div>
+    </div>
+  </div>
+
   <div class="term">
     <div class="term-bar">
       <div class="term-dots">
@@ -284,19 +439,19 @@
       </div>
 
       <div class="badge-section">
-        <div class="badge-section-label">// databases &amp; migration</div>
+        <div class="badge-section-label">// databases & migration</div>
         <div class="badge-row">
           <span class="badge"><svg viewBox="0 0 24 24"><path d="M14.143 0C9.43 0 5.143 3.556 5.143 8c0 2.667 1.333 5.016 3.428 6.577L5.143 24h3.286l2.572-7.286C11.714 16.905 12.857 17.143 14.143 17.143c4.714 0 8.571-3.556 8.571-8.571C22.714 3.556 18.857 0 14.143 0zm0 14.286c-3.429 0-5.714-2.286-5.714-5.714 0-3.429 2.285-5.715 5.714-5.715 3.428 0 5.714 2.286 5.714 5.715 0 3.428-2.286 5.714-5.714 5.714z"/></svg>DB2</span>
           <span class="badge"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" fill="currentColor" opacity=".6"/><rect x="14" y="3" width="7" height="7" fill="currentColor" opacity=".8"/><rect x="3" y="14" width="7" height="7" fill="currentColor" opacity=".8"/><rect x="14" y="14" width="7" height="7" fill="currentColor"/></svg>MS SQL Server</span>
           <span class="badge"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.5"/></svg>Qlik Attunity</span>
-          <span class="badge"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>IICS</span>
+          <span class="badge"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 100 20h9a5 5 0 000-10z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>IICS</span>
           <span class="badge"><svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>Git</span>
           <span class="badge"><svg viewBox="0 0 24 24"><path d="M12 0L0 6.5v4.308l12 6.5 12-6.5V6.5zm0 2.236L21.5 7.5 12 12.764 2.5 7.5zM0 12.192v4.308L12 24l12-6.5v-4.308l-12 6.5z"/></svg>Databricks</span>
         </div>
       </div>
 
       <div class="badge-section" style="margin-bottom:0">
-        <div class="badge-section-label">// ai &amp; productivity</div>
+        <div class="badge-section-label">// ai & productivity</div>
         <div class="badge-row">
           <span class="badge"><svg viewBox="0 0 24 24"><path d="M12 2L4 20h3.5l1.5-4h6l1.5 4H20L12 2zm-2 11l2-5.5 2 5.5H10z" fill="currentColor"/></svg>Claude (Sonnet)</span>
           <span class="badge"><svg viewBox="0 0 24 24"><path d="M22.282 9.821a5.985 5.985 0 00-.516-4.91 6.046 6.046 0 00-6.51-2.9A6.065 6.065 0 004.981 4.18a5.985 5.985 0 00-3.998 2.9 6.046 6.046 0 00.743 7.097 5.98 5.98 0 00.51 4.911 6.051 6.051 0 006.515 2.9A5.985 5.985 0 0013.26 24a6.056 6.056 0 005.772-4.206 5.99 5.99 0 003.997-2.9 6.056 6.056 0 00-.747-7.073zM13.26 22.43a4.476 4.476 0 01-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 00.392-.681v-6.737l2.02 1.168a.071.071 0 01.038.052v5.583a4.504 4.504 0 01-4.494 4.494zM3.6 18.304a4.47 4.47 0 01-.535-3.014l.142.085 4.783 2.759a.771.771 0 00.78 0l5.843-3.369v2.332a.08.08 0 01-.033.062L9.74 19.95a4.5 4.5 0 01-6.14-1.646zM2.34 7.896a4.485 4.485 0 012.366-1.973V11.6a.766.766 0 00.388.676l5.815 3.355-2.02 1.168a.076.076 0 01-.071 0l-4.83-2.786A4.504 4.504 0 012.34 7.872zm16.597 3.855l-5.843-3.369 2.02-1.168a.076.076 0 01.071 0l4.83 2.791a4.494 4.494 0 01-.676 8.105v-5.678a.79.79 0 00-.402-.681zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 00-.785 0L9.409 9.23V6.897a.066.066 0 01.028-.061l4.83-2.787a4.5 4.5 0 016.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 01-.038-.057V6.075a4.5 4.5 0 017.375-3.453l-.142.08L8.704 5.46a.795.795 0 00-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z"/></svg>GPT-4.5</span>
@@ -306,7 +461,6 @@
     </div>
   </div>
 
-  <!-- execute_mission_log -->
   <div class="term">
     <div class="term-bar">
       <div class="term-dots">
@@ -315,35 +469,43 @@
       <span class="term-title">bash — execute_mission_log.sh</span>
     </div>
     <div class="term-body">
-      <div class="cmd-line"><span class="cmd-prompt">~</span><span class="cmd-path">$</span><span class="cmd-text">./execute_mission_log.sh</span></div>
-      <div class="log-item">
-        <span class="log-tag">MAINFRAME_MOD</span>
-        <span class="log-val">Driving modernization of legacy <b>DB2/COBOL</b> systems onto a serverless <b>AWS architecture</b> (Vanguard, Finance).</span>
+      <div class="cmd-line"><span class="cmd-prompt">~</span><span class="cmd-path">$</span><span class="cmd-text">./execute_mission_log.sh --tree</span></div>
+      
+      <div class="tree-wrap">
+        <div class="tree-item">
+          <div class="tree-folder" onclick="toggleTree(this)"><span class="toggle-icon">[+]</span> Vanguard_Migration/</div>
+          <div class="tree-content">Driving modernization of legacy <b>DB2/COBOL</b> systems onto a serverless <b>AWS architecture</b> (Vanguard, Finance).</div>
+        </div>
+        
+        <div class="tree-item">
+          <div class="tree-folder" onclick="toggleTree(this)"><span class="toggle-icon">[+]</span> Workflow_Merge_Pipeline/</div>
+          <div class="tree-content">Engineered <b>ACID-compliant</b> client merge/rollback workflows using <b>AWS Step Functions</b> — integrating Lambda components across multi-product families spanning <b>500+ tables</b>; full rollback auto-triggers on any merge failure.</div>
+        </div>
+
+        <div class="tree-item">
+          <div class="tree-folder" onclick="toggleTree(this)"><span class="toggle-icon">[+]</span> Performance_Tuning/</div>
+          <div class="tree-content">Developed efficient <b>PySpark</b> workflows to replace legacy COBOL scripts, reducing memory and compute costs in AWS.</div>
+        </div>
+
+        <div class="tree-item">
+          <div class="tree-folder" onclick="toggleTree(this)"><span class="toggle-icon">[+]</span> System_Reliability/</div>
+          <div class="tree-content">Built a resilient re-trigger mechanism via <b>SQS + Lambda</b> to reprocess failed <b>AWS Glue</b> batches — ensuring <b>100%</b> job completion.</div>
+        </div>
+
+        <div class="tree-item">
+          <div class="tree-folder" onclick="toggleTree(this)"><span class="toggle-icon">[+]</span> Healthcare_DW_Migration/</div>
+          <div class="tree-content">Migrated legacy DW (<b>MS SQL / IICS</b>) to AWS (RDS, S3, Lambda) with <b>SCD Type 1/2</b> models; contributed to <b>35% YOY BI growth</b>.</div>
+        </div>
+
+        <div class="tree-item">
+          <div class="tree-folder" onclick="toggleTree(this)"><span class="toggle-icon">[+]</span> Legacy_Documentation/</div>
+          <div class="tree-content">Authored detailed <b>HLD/LLD</b> documents for complex Mainframe/COBOL file generation jobs, analysing multi-stage intermediate files and business logic.</div>
+        </div>
       </div>
-      <div class="log-item">
-        <span class="log-tag">WORKFLOW_MIG</span>
-        <span class="log-val">Engineered <b>ACID-compliant</b> client merge/rollback workflows using <b>AWS Step Functions</b> — integrating Lambda components across multi-product families spanning <b>500+ tables</b>; full rollback auto-triggers on any merge failure.</span>
-      </div>
-      <div class="log-item">
-        <span class="log-tag">PERF_TUNE</span>
-        <span class="log-val">Developed efficient <b>PySpark</b> workflows to replace legacy COBOL scripts, reducing memory and compute costs in AWS.</span>
-      </div>
-      <div class="log-item">
-        <span class="log-tag">RELIABILITY</span>
-        <span class="log-val">Built a resilient re-trigger mechanism via <b>SQS + Lambda</b> to reprocess failed <b>AWS Glue</b> batches — ensuring <b>100%</b> job completion.</span>
-      </div>
-      <div class="log-item">
-        <span class="log-tag">HEALTHCARE</span>
-        <span class="log-val">Migrated legacy DW (<b>MS SQL / IICS</b>) to AWS (RDS, S3, Lambda) with <b>SCD Type 1/2</b> models; contributed to <b>35% YOY BI growth</b>.</span>
-      </div>
-      <div class="log-item">
-        <span class="log-tag">HLD/LLD</span>
-        <span class="log-val">Authored detailed <b>HLD/LLD</b> documents for complex Mainframe/COBOL file generation jobs, analysing multi-stage intermediate files and business logic.</span>
-      </div>
+
     </div>
   </div>
 
-  <!-- certifications -->
   <div class="term">
     <div class="term-bar">
       <div class="term-dots">
@@ -353,18 +515,19 @@
     </div>
     <div class="term-body">
       <div class="cmd-line"><span class="cmd-prompt">~</span><span class="cmd-path">$</span><span class="cmd-text">grep "ACHIEVEMENTS" /var/log/certifications.log</span></div>
-      <div class="badge-row" style="margin-bottom:14px">
-        <span class="badge"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>HackerRank — SQL Advanced</span>
-        <span class="badge"><svg viewBox="0 0 24 24"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.96 3.403 5.96h2.03v-2.867s-.109-3.403 3.35-3.403h5.769s3.24.052 3.24-3.131V3.19S18.28 0 11.914 0zm-3.2 1.848a1.046 1.046 0 1 1 0 2.093 1.046 1.046 0 0 1 0-2.093z"/></svg>Cutshort — Python</span>
+      <div class="log-wrap" style="margin-top: 10px;">
+        <div class="badge-row" style="margin-bottom:14px">
+          <span class="badge"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>HackerRank — SQL Advanced</span>
+          <span class="badge"><svg viewBox="0 0 24 24"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.96 3.403 5.96h2.03v-2.867s-.109-3.403 3.35-3.403h5.769s3.24.052 3.24-3.131V3.19S18.28 0 11.914 0zm-3.2 1.848a1.046 1.046 0 1 1 0 2.093 1.046 1.046 0 0 1 0-2.093z"/></svg>Cutshort — Python</span>
+        </div>
+        <div class="log-item"><span class="log-tag warn">AWARD</span><span class="log-val"><b>SPOT Award</b> — exceptional development skills and product ownership.</span></div>
+        <div class="log-item"><span class="log-tag green">CERT_01</span><span class="log-val">Certified in <b>Advanced SQL</b> — HackerRank.</span></div>
+        <div class="log-item"><span class="log-tag green">CERT_02</span><span class="log-val">Certified in <b>Python Skills</b> — Cutshort.</span></div>
+        <div class="log-item"><span class="log-tag green">EDU</span><span class="log-val">B.Tech CSE — <b>S'O'A University, Bhubaneswar</b> · CGPA <b>8.27</b> · Apr 2022</span></div>
       </div>
-      <div class="log-item"><span class="log-tag warn">AWARD</span><span class="log-val"><b>SPOT Award</b> — exceptional development skills and product ownership.</span></div>
-      <div class="log-item"><span class="log-tag green">CERT_01</span><span class="log-val">Certified in <b>Advanced SQL</b> — HackerRank.</span></div>
-      <div class="log-item"><span class="log-tag green">CERT_02</span><span class="log-val">Certified in <b>Python Skills</b> — Cutshort.</span></div>
-      <div class="log-item"><span class="log-tag green">EDU</span><span class="log-val">B.Tech CSE — <b>S'O'A University, Bhubaneswar</b> · CGPA <b>8.27</b> · Apr 2022</span></div>
     </div>
   </div>
 
-  <!-- contact -->
   <div class="term">
     <div class="term-bar">
       <div class="term-dots">
@@ -374,7 +537,7 @@
     </div>
     <div class="term-body">
       <div class="cmd-line"><span class="cmd-prompt">~</span><span class="cmd-path">$</span><span class="cmd-text">ping -c 1 contact_points</span></div>
-      <div class="badge-row">
+      <div class="badge-row log-wrap" style="margin-top: 10px;">
         <a class="badge" href="https://linkedin.com/in/bitan-banerjee"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
         <a class="badge" href="mailto:banerjeebitan@outlook.com"><svg viewBox="0 0 24 24"><path d="M0 3v18h24V3H0zm21.518 2L12 13.713 2.482 5h19.036zM2 19V7.183l10 8.104 10-8.104V19H2z"/></svg>banerjeebitan@outlook.com</a>
         <a class="badge" href="https://github.com/Bitan-Banerjee"><svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
@@ -382,16 +545,42 @@
     </div>
   </div>
 
+  <div class="term" id="game-term">
+    <div class="term-bar">
+      <div class="term-dots">
+        <div class="term-dot r"></div><div class="term-dot y"></div><div class="term-dot g"></div>
+      </div>
+      <span class="term-title">bash — execute_dyno.sh</span>
+    </div>
+    <div class="term-body" style="padding: 0;">
+      <div style="padding: 18px 20px 0;">
+        <div class="cmd-line"><span class="cmd-prompt">~</span><span class="cmd-path">$</span><span class="cmd-text">./execute_dyno.sh --play</span></div>
+      </div>
+      <canvas id="dino-canvas" width="780" height="150" style="display:block; width:100%; background: #0f0d0b; border-top: 1px dashed #3d3228; cursor: pointer;"></canvas>
+    </div>
+  </div>
+
   <div style="text-align:center;padding:12px 0;font-size:11px;color:var(--text-dim);letter-spacing:0.1em;">
-    ██▓▒░ EOF — Bitan Banerjee · Data Engineer · 2025 ░▒▓██
+    ██▓▒░ EOF — Bitan Banerjee · Data Engineer · 2026 ░▒▓██
   </div>
 
 </div>
+
 <script>
+// Logic: Pixel Avatar Generator (Enhanced with Body)
 const pattern = [
-  [0,0,1,1,1,1,1,0,0],[0,1,1,0,0,0,1,1,0],[1,1,0,1,0,1,0,1,1],
-  [1,1,0,0,0,0,0,1,1],[1,1,0,1,1,1,0,1,1],[0,1,1,0,0,0,1,1,0],
-  [0,0,1,1,0,1,1,0,0],[0,0,0,1,1,1,0,0,0],[0,0,1,0,1,0,1,0,0],
+  [0,0,1,1,1,1,1,0,0],
+  [0,1,1,0,0,0,1,1,0],
+  [1,1,0,1,0,1,0,1,1],
+  [1,1,0,0,0,0,0,1,1],
+  [1,1,0,1,1,1,0,1,1],
+  [0,1,1,0,0,0,1,1,0],
+  [0,0,1,1,1,1,1,0,0],
+  [0,0,0,1,1,1,0,0,0], // Neck
+  [0,0,1,1,1,1,1,0,0], // Shoulders
+  [0,0,1,1,1,1,1,0,0], // Torso
+  [0,0,1,1,1,1,1,0,0], // Torso
+  [0,0,1,0,1,0,1,0,0], // Feet
 ];
 const av = document.getElementById('pxav');
 pattern.forEach(row => row.forEach(cell => {
@@ -399,6 +588,178 @@ pattern.forEach(row => row.forEach(cell => {
   d.className = 'px' + (cell ? ' on' : '');
   av.appendChild(d);
 }));
+
+// Logic: Dynamic Experience Calculation (August 28, 2022)
+const startDate = new Date('2022-08-28');
+const now = new Date();
+const diffYears = (now - startDate) / (1000 * 60 * 60 * 24 * 365.25);
+const roundedExp = diffYears.toFixed(1);
+document.getElementById('exp-val-1').innerText = roundedExp;
+document.getElementById('exp-val-2').innerText = roundedExp + ' years';
+
+// Logic: Architecture Pipeline Tooltips
+function showTip(text) {
+  const tip = document.getElementById('pipe-tooltip');
+  tip.innerText = "> " + text;
+  tip.style.color = 'var(--text-bright)';
+}
+function hideTip() {
+  const tip = document.getElementById('pipe-tooltip');
+  tip.innerText = "> SYSTEM STANDBY... Hover over a node to inspect.";
+  tip.style.color = 'var(--text-dim)';
+}
+
+// Logic: Interactive Directory Tree Toggle
+function toggleTree(element) {
+  const parent = element.parentElement;
+  const icon = element.querySelector('.toggle-icon');
+  parent.classList.toggle('open');
+  if(parent.classList.contains('open')) {
+    icon.innerText = '[-]';
+  } else {
+    icon.innerText = '[+]';
+  }
+}
+
+// Logic: TERMINAL DINO GAME
+const canvas = document.getElementById('dino-canvas');
+const ctx = canvas.getContext('2d');
+
+let isPlaying = false;
+let isGameOver = false;
+let score = 0;
+let frames = 0;
+
+const dino = { x: 50, y: 100, w: 20, h: 22, dy: 0, jump: -9, gravity: 0.5, grounded: true };
+let obstacles = [];
+
+const colorBg = '#0f0d0b';
+const colorDino = '#e8834a'; 
+const colorCactus = '#c8a96e'; 
+const colorText = '#8a7a6a'; 
+
+function resetGame() {
+  dino.y = 100;
+  dino.dy = 0;
+  obstacles = [];
+  score = 0;
+  frames = 0;
+  isGameOver = false;
+  isPlaying = true;
+  gameLoop();
+}
+
+function drawDino() {
+  ctx.fillStyle = colorDino;
+  ctx.fillRect(dino.x, dino.y, dino.w, dino.h);
+  ctx.fillStyle = colorBg;
+  ctx.fillRect(dino.x + 12, dino.y + 4, 4, 4);
+}
+
+function handleObstacles() {
+  if (frames % 100 === 0) {
+    let type = Math.random() > 0.5 ? 1 : 2; 
+    obstacles.push({ x: canvas.width, y: 102, w: 15 * type, h: 20, speed: 5 });
+  }
+
+  ctx.fillStyle = colorCactus;
+  for (let i = 0; i < obstacles.length; i++) {
+    let obs = obstacles[i];
+    obs.x -= obs.speed;
+    ctx.fillRect(obs.x, obs.y, obs.w, obs.h);
+
+    if (dino.x < obs.x + obs.w && dino.x + dino.w > obs.x &&
+        dino.y < obs.y + obs.h && dino.y + dino.h > obs.y) {
+      isGameOver = true;
+      isPlaying = false;
+    }
+  }
+  obstacles = obstacles.filter(obs => obs.x + obs.w > 0);
+}
+
+function drawGround() {
+  ctx.strokeStyle = colorText;
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(0, 122);
+  ctx.lineTo(canvas.width, 122);
+  ctx.stroke();
+}
+
+function drawUI() {
+  ctx.fillStyle = colorText;
+  ctx.font = "14px 'Courier New', monospace";
+  ctx.fillText("SCORE: " + Math.floor(score), canvas.width - 120, 30);
+
+  if (!isPlaying && !isGameOver) {
+    ctx.fillStyle = colorDino;
+    ctx.fillText("CLICK OR PRESS SPACE TO START", canvas.width / 2 - 120, 75);
+  } else if (isGameOver) {
+    ctx.fillStyle = '#ff5f57';
+    ctx.fillText("SYSTEM FAILURE // GAME OVER", canvas.width / 2 - 110, 65);
+    ctx.fillStyle = colorText;
+    ctx.fillText("PRESS SPACE TO REBOOT", canvas.width / 2 - 90, 90);
+  }
+}
+
+function gameLoop() {
+  if (!isPlaying && !isGameOver) return;
+
+  ctx.fillStyle = colorBg;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  drawGround();
+  
+  if (isPlaying) {
+    dino.dy += dino.gravity;
+    dino.y += dino.dy;
+
+    if (dino.y >= 100) {
+      dino.y = 100;
+      dino.dy = 0;
+      dino.grounded = true;
+    } else {
+      dino.grounded = false;
+    }
+
+    handleObstacles();
+    score += 0.05;
+    frames++;
+  }
+
+  drawDino();
+  drawUI();
+
+  if (!isGameOver) {
+    requestAnimationFrame(gameLoop);
+  }
+}
+
+function jump() {
+  if (isPlaying && dino.grounded) {
+    dino.dy = dino.jump;
+    dino.grounded = false;
+  } else if (!isPlaying || isGameOver) {
+    resetGame();
+  }
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.code === 'Space') {
+    e.preventDefault(); 
+    jump();
+  }
+});
+canvas.addEventListener('mousedown', jump);
+canvas.addEventListener('touchstart', (e) => { e.preventDefault(); jump(); }, {passive: false});
+
+ctx.fillStyle = colorBg;
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+drawGround();
+dino.y = 100;
+drawDino();
+drawUI();
 </script>
 </body>
 </html>
+
