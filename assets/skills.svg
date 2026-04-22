@@ -1,26 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 500" width="850" height="500">
-  <style>
-    .bg { fill: #111110; stroke: #3d3228; stroke-width: 1; rx: 8; }
-    .top { fill: #1a1612; }
-    .txt { font-family: 'Courier New', Courier, monospace; font-size: 14px; fill: #d4c4b0; }
-    .prompt { fill: #c8a96e; }
-    .folder { fill: #e8834a; font-weight: bold; }
-    .branch { fill: #5c534b; }
-    .title { font-family: 'Courier New', Courier, monospace; font-size: 13px; fill: #8a7a6a; }
-  </style>
+  <defs>
+    <style>
+      .bg { fill: #0f0d0b; stroke: #3d3228; stroke-width: 1; rx: 8; }
+      .top { fill: #241e18; }
+      .txt { font-family: 'Courier New', Courier, monospace; font-size: 14px; fill: #d4c4b0; }
+      .prompt { fill: #c8a96e; }
+      .folder { fill: #e8834a; font-weight: bold; }
+      .branch { fill: #5c534b; }
+      .title { font-family: 'Courier New', Courier, monospace; font-size: 13px; fill: #8a7a6a; letter-spacing: 1px; }
+    </style>
+  </defs>
   
   <rect class="bg" width="100%" height="100%" />
-  <path class="top" d="M0 8a8 8 0 0 1 8-8h834a8 8 0 0 1 8 8v32H0V8z" />
+  <path class="top" d="M0 8a8 8 0 0 1 8-8h834a8 8 0 0 1 8 8v28H0V8z" />
+  <line x1="0" y1="36" x2="850" y2="36" stroke="#3d3228" stroke-width="1" />
   
-  <circle cx="20" cy="20" r="6" fill="#ff5f57"/>
-  <circle cx="40" cy="20" r="6" fill="#febc2e"/>
-  <circle cx="60" cy="20" r="6" fill="#28c840"/>
+  <circle cx="24" cy="18" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="18" r="6" fill="#febc2e"/>
+  <circle cx="60" cy="18" r="6" fill="#28c840"/>
   
-  <text x="425" y="25" class="title" text-anchor="middle">bash — ls -la /skills/</text>
-  <line x1="0" y1="40" x2="850" y2="40" stroke="#3d3228" />
+  <text x="425" y="23" class="title" text-anchor="middle">bash — ls -la /skills/</text>
 
-  <text x="30" y="75" class="txt">
-    <tspan x="30" dy="0"><tspan class="prompt">~ $</tspan> ls -la /skills/</tspan>
+  <text x="30" y="75" class="txt" xml:space="preserve">
+    <tspan x="30" dy="0"><tspan class="folder">~ </tspan><tspan class="prompt">$ </tspan>ls -la /skills/</tspan>
     <tspan x="30" dy="30"><tspan class="folder">skills/</tspan></tspan>
 
     <tspan x="30" dy="24"><tspan class="branch">├── </tspan><tspan class="folder">languages/</tspan></tspan>
@@ -42,7 +44,7 @@
     <tspan x="30" dy="24"><tspan class="branch">│   └── </tspan>IICS</tspan>
   </text>
 
-  <text x="420" y="129" class="txt">
+  <text x="420" y="129" class="txt" xml:space="preserve">
     <tspan x="420" dy="0"><tspan class="branch">├── </tspan><tspan class="folder">aws_cloud/</tspan></tspan>
     <tspan x="420" dy="24"><tspan class="branch">│   ├── </tspan>Step Functions</tspan>
     <tspan x="420" dy="24"><tspan class="branch">│   ├── </tspan>Lambda</tspan>
