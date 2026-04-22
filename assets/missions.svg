@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="330" viewBox="0 0 800 330">
+  <defs><style>.mono { font-family: 'Courier New', Courier, monospace; }</style></defs>
+
+  <rect width="800" height="330" fill="#0f0d0b" stroke="#3d3228" stroke-width="1"/>
+  <rect width="800" height="36" fill="#241e18"/>
+  <line x1="0" y1="36" x2="800" y2="36" stroke="#3d3228" stroke-width="1"/>
+  <polygon points="0,0 14,0 0,14" fill="#e8834a" opacity="0.6"/>
+
+  <circle cx="24" cy="18" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="18" r="6" fill="#febc2e"/>
+  <circle cx="60" cy="18" r="6" fill="#28c840"/>
+  <text x="400" y="23" text-anchor="middle" class="mono" font-size="11" fill="#8a7a6a" letter-spacing="1">bash — ./execute_mission_log.sh</text>
+
+  <!-- prompt -->
+  <text x="24" y="60" class="mono" font-size="12" fill="#e8834a">~</text>
+  <text x="36" y="60" class="mono" font-size="12" fill="#c8a96e">$</text>
+  <text x="48" y="60" class="mono" font-size="12" fill="#f5ede0">./execute_mission_log.sh</text>
+
+  <!-- separator line -->
+  <line x1="24" y1="72" x2="776" y2="72" stroke="#3d3228" stroke-width="1"/>
+
+  <!-- entry 1 -->
+  <rect x="24" y="80" width="130" height="18" fill="#241e18" stroke="#3d3228" stroke-width="1"/>
+  <text x="89" y="93" text-anchor="middle" class="mono" font-size="10" fill="#e8834a" letter-spacing="1">MAINFRAME_MOD</text>
+  <text x="166" y="93" class="mono" font-size="12" fill="#d4c4b0">Driving modernization of legacy</text>
+  <text x="390" y="93" class="mono" font-size="12" fill="#f5ede0" font-weight="bold"> DB2/COBOL</text>
+  <text x="464" y="93" class="mono" font-size="12" fill="#d4c4b0"> → serverless</text>
+  <text x="556" y="93" class="mono" font-size="12" fill="#f5ede0" font-weight="bold"> AWS</text>
+  <text x="584" y="93" class="mono" font-size="12" fill="#d4c4b0"> (Vanguard)</text>
+
+  <line x1="24" y1="108" x2="776" y2="108" stroke="#3d3228" stroke-width="1"/>
+
+  <!-- entry 2 -->
+  <rect x="24" y="116" width="130" height="18" fill="#241e18" stroke="#3d3228" stroke-width="1"/>
+  <text x="89" y="129" text-anchor="middle" class="mono" font-size="10" fill="#e8834a" letter-spacing="1">WORKFLOW_MIG</text>
+  <text x="166" y="129" class="mono" font-size="12" fill="#d4c4b0">Engineered</text>
+  <text x="238" y="129" class="mono" font-size="12" fill="#f5ede0" font-weight="bold"> ACID-compliant</text>
+  <text x="368" y="129" class="mono" font-size="12" fill="#d4c4b0"> merge/rollback via</text>
+  <text x="502" y="129" class="mono" font-size="12" fill="#f5ede0" font-weight="bold"> Step Functions</text>
+  <text x="166" y="147" class="mono" font-size="12" fill="#d4c4b0">across product families spanning</text>
+  <text x="376" y="147" class="mono" font-size="12" fill="#f5ede0" font-weight="bold"> 500+ tables</text>
+  <text x="468" y="147" class="mono" font-size="12" fill="#d4c4b0"> — auto-rollback on any merge failure.</text>
+
+  <line x1="24" y1="162" x2="776" y2="162" stroke="#3d3228" stroke-width="1"/>
+
+  <!-- entry 3 -->
+  <rect x="24" y="170" width="104" height="18" fill="#241e18" stroke="#3d3228" stroke-width="1"/>
+  <text x="76" y="183" text-anchor="middle" class="mono" font-size="10" fill="#e8834a" letter-spacing="1">PERF_TUNE</text>
+  <text x="140" y="183" class="mono" font-size="12" fill="#d4c4b0">Developed efficient</text>
+  <text x="270" y="183" class="mono" font-size="12" fill="#f5ede0" font-weight="bold"> PySpark</text>
+  <text x="336" y="183" class="mono" font-size="12" fill="#d4c4b0"> workflows replacing legacy COBOL scripts,</text>
+  <text x="140" y="201" class="mono" font-size="12" fill="#d4c4b0">reducing memory and compute costs in AWS.</text>
+
+  <line x1="24" y1="216" x2="776" y2="216" stroke="#3d3228" stroke-width="1"/>
+
+  <!-- entry 4 -->
+  <rect x="24" y="224" width="104" height="18" fill="#241e18" stroke="#3d3228" stroke-width="1"/>
+  <text x="76" y="237" text-anchor="middle" class="mono" font-size="10" fill="#e8834a" letter-spacing="1">RELIABILITY</text>
+  <text x="140" y="237" class="mono" font-size="12" fill="#d4c4b0">Re-trigger mechanism via</text>
+  <text x="322" y="237" class="mono" font-size="12" fill="#f5ede0" font-weight="bold"> SQS + Lambda</text>
+  <text x="434" y="237" class="mono" font-size="12" fill="#d4c4b0"> — reprocesses failed</text>
+  <text x="586" y="237" class="mono" font-size="12" fill="#f5ede0" font-weight="bold"> Glue</text>
+  <text x="614" y="237" class="mono" font-size="12" fill="#d4c4b0"> batches,</text>
+  <text x="140" y="255" class="mono" font-size="12" fill="#d4c4b0">guaranteeing</text>
+  <text x="244" y="255" class="mono" font-size="12" fill="#f5ede0" font-weight="bold"> 100%</text>
+  <text x="290" y="255" class="mono" font-size="12" fill="#d4c4b0"> job completion.</text>
+
+  <line x1="24" y1="270" x2="776" y2="270" stroke="#3d3228" stroke-width="1"/>
+
+  <!-- entry 5 -->
+  <rect x="24" y="278" width="104" height="18" fill="#241e18" stroke="#3d3228" stroke-width="1"/>
+  <text x="76" y="291" text-anchor="middle" class="mono" font-size="10" fill="#c8a96e" letter-spacing="1">HEALTHCARE</text>
+  <text x="140" y="291" class="mono" font-size="12" fill="#d4c4b0">Migrated legacy DW (</text>
+  <text x="290" y="291" class="mono" font-size="12" fill="#f5ede0" font-weight="bold">MS SQL/IICS</text>
+  <text x="380" y="291" class="mono" font-size="12" fill="#d4c4b0">) → AWS. SCD Type 1/2 models.</text>
+  <text x="140" y="309" class="mono" font-size="12" fill="#f5ede0" font-weight="bold">35% YOY BI growth</text>
+  <text x="284" y="309" class="mono" font-size="12" fill="#d4c4b0"> across 280+ table infrastructure.</text>
+</svg>

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="260" viewBox="0 0 800 260">
+  <defs>
+    <style>
+      .mono { font-family: 'Courier New', Courier, monospace; }
+    </style>
+  </defs>
+
+  <!-- outer border -->
+  <rect width="800" height="260" rx="0" fill="#0f0d0b" stroke="#3d3228" stroke-width="1"/>
+
+  <!-- title bar -->
+  <rect width="800" height="36" fill="#241e18" stroke="#3d3228" stroke-width="0"/>
+  <line x1="0" y1="36" x2="800" y2="36" stroke="#3d3228" stroke-width="1"/>
+
+  <!-- pixel corner accent -->
+  <polygon points="0,0 14,0 0,14" fill="#e8834a" opacity="0.6"/>
+
+  <!-- traffic light dots -->
+  <circle cx="24" cy="18" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="18" r="6" fill="#febc2e"/>
+  <circle cx="60" cy="18" r="6" fill="#28c840"/>
+
+  <!-- title bar text -->
+  <text x="400" y="23" text-anchor="middle" class="mono" font-size="11" fill="#8a7a6a" letter-spacing="1">bash — bitan_banerjee.sh</text>
+
+  <!-- pixel avatar (9x9 grid, 10px each, gap 1) -->
+  <!-- row 0 -->
+  <rect x="24"  y="56" width="9" height="9" fill="#3d3228"/>
+  <rect x="34"  y="56" width="9" height="9" fill="#3d3228"/>
+  <rect x="44"  y="56" width="9" height="9" fill="#e8834a"/>
+  <rect x="54"  y="56" width="9" height="9" fill="#e8834a"/>
+  <rect x="64"  y="56" width="9" height="9" fill="#e8834a"/>
+  <rect x="74"  y="56" width="9" height="9" fill="#e8834a"/>
+  <rect x="84"  y="56" width="9" height="9" fill="#e8834a"/>
+  <rect x="94"  y="56" width="9" height="9" fill="#3d3228"/>
+  <rect x="104" y="56" width="9" height="9" fill="#3d3228"/>
+  <!-- row 1 -->
+  <rect x="24"  y="66" width="9" height="9" fill="#3d3228"/>
+  <rect x="34"  y="66" width="9" height="9" fill="#e8834a"/>
+  <rect x="44"  y="66" width="9" height="9" fill="#e8834a"/>
+  <rect x="54"  y="66" width="9" height="9" fill="#3d3228"/>
+  <rect x="64"  y="66" width="9" height="9" fill="#3d3228"/>
+  <rect x="74"  y="66" width="9" height="9" fill="#3d3228"/>
+  <rect x="84"  y="66" width="9" height="9" fill="#e8834a"/>
+  <rect x="94"  y="66" width="9" height="9" fill="#e8834a"/>
+  <rect x="104" y="66" width="9" height="9" fill="#3d3228"/>
+  <!-- row 2 -->
+  <rect x="24"  y="76" width="9" height="9" fill="#e8834a"/>
+  <rect x="34"  y="76" width="9" height="9" fill="#e8834a"/>
+  <rect x="44"  y="76" width="9" height="9" fill="#3d3228"/>
+  <rect x="54"  y="76" width="9" height="9" fill="#e8834a"/>
+  <rect x="64"  y="76" width="9" height="9" fill="#3d3228"/>
+  <rect x="74"  y="76" width="9" height="9" fill="#e8834a"/>
+  <rect x="84"  y="76" width="9" height="9" fill="#3d3228"/>
+  <rect x="94"  y="76" width="9" height="9" fill="#e8834a"/>
+  <rect x="104" y="76" width="9" height="9" fill="#e8834a"/>
+  <!-- row 3 -->
+  <rect x="24"  y="86" width="9" height="9" fill="#e8834a"/>
+  <rect x="34"  y="86" width="9" height="9" fill="#e8834a"/>
+  <rect x="44"  y="86" width="9" height="9" fill="#3d3228"/>
+  <rect x="54"  y="86" width="9" height="9" fill="#3d3228"/>
+  <rect x="64"  y="86" width="9" height="9" fill="#3d3228"/>
+  <rect x="74"  y="86" width="9" height="9" fill="#3d3228"/>
+  <rect x="84"  y="86" width="9" height="9" fill="#3d3228"/>
+  <rect x="94"  y="86" width="9" height="9" fill="#e8834a"/>
+  <rect x="104" y="86" width="9" height="9" fill="#e8834a"/>
+  <!-- row 4 -->
+  <rect x="24"  y="96" width="9" height="9" fill="#e8834a"/>
+  <rect x="34"  y="96" width="9" height="9" fill="#e8834a"/>
+  <rect x="44"  y="96" width="9" height="9" fill="#3d3228"/>
+  <rect x="54"  y="96" width="9" height="9" fill="#e8834a"/>
+  <rect x="64"  y="96" width="9" height="9" fill="#e8834a"/>
+  <rect x="74"  y="96" width="9" height="9" fill="#e8834a"/>
+  <rect x="84"  y="96" width="9" height="9" fill="#3d3228"/>
+  <rect x="94"  y="96" width="9" height="9" fill="#e8834a"/>
+  <rect x="104" y="96" width="9" height="9" fill="#e8834a"/>
+  <!-- row 5 -->
+  <rect x="24"  y="106" width="9" height="9" fill="#3d3228"/>
+  <rect x="34"  y="106" width="9" height="9" fill="#e8834a"/>
+  <rect x="44"  y="106" width="9" height="9" fill="#e8834a"/>
+  <rect x="54"  y="106" width="9" height="9" fill="#3d3228"/>
+  <rect x="64"  y="106" width="9" height="9" fill="#3d3228"/>
+  <rect x="74"  y="106" width="9" height="9" fill="#3d3228"/>
+  <rect x="84"  y="106" width="9" height="9" fill="#e8834a"/>
+  <rect x="94"  y="106" width="9" height="9" fill="#e8834a"/>
+  <rect x="104" y="106" width="9" height="9" fill="#3d3228"/>
+  <!-- row 6 -->
+  <rect x="24"  y="116" width="9" height="9" fill="#3d3228"/>
+  <rect x="34"  y="116" width="9" height="9" fill="#3d3228"/>
+  <rect x="44"  y="116" width="9" height="9" fill="#e8834a"/>
+  <rect x="54"  y="116" width="9" height="9" fill="#e8834a"/>
+  <rect x="64"  y="116" width="9" height="9" fill="#3d3228"/>
+  <rect x="74"  y="116" width="9" height="9" fill="#e8834a"/>
+  <rect x="84"  y="116" width="9" height="9" fill="#e8834a"/>
+  <rect x="94"  y="116" width="9" height="9" fill="#3d3228"/>
+  <rect x="104" y="116" width="9" height="9" fill="#3d3228"/>
+
+  <!-- blinking cursor rect -->
+  <rect x="24" y="132" width="7" height="13" fill="#e8834a" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0;0.9" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- hero text block -->
+  <text x="134" y="68"  class="mono" font-size="13" fill="#8a7a6a">Bitan Banerjee</text>
+  <text x="134" y="68"  class="mono" font-size="13" fill="#e8834a" font-weight="bold">Bitan Banerjee</text>
+
+  <!-- rewrite properly layered -->
+  <text x="134" y="66"  class="mono" font-size="12" fill="#8a7a6a">┌────────────────────────────────────────────────┐</text>
+  <text x="134" y="84"  class="mono" font-size="12" fill="#e8834a" font-weight="bold">  Bitan Banerjee </text>
+  <text x="274" y="84"  class="mono" font-size="12" fill="#8a7a6a">CLI </text>
+  <text x="304" y="84"  class="mono" font-size="12" fill="#c8a96e">v3.8.0</text>
+  <text x="134" y="100" class="mono" font-size="12" fill="#8a7a6a">  auth    : </text>
+  <text x="218" y="100" class="mono" font-size="12" fill="#c8a96e">banerjeebitan@outlook.com</text>
+  <text x="134" y="116" class="mono" font-size="12" fill="#8a7a6a">  role    : </text>
+  <text x="218" y="116" class="mono" font-size="12" fill="#f5ede0">Data Engineer</text>
+  <text x="340" y="116" class="mono" font-size="12" fill="#8a7a6a"> (Finance &amp; Healthcare)</text>
+  <text x="134" y="132" class="mono" font-size="12" fill="#8a7a6a">  status  : </text>
+  <text x="218" y="132" class="mono" font-size="12" fill="#c8a96e">"Baking data into the science of tomorrow."</text>
+  <text x="134" y="148" class="mono" font-size="12" fill="#8a7a6a">└────────────────────────────────────────────────┘</text>
+
+  <!-- stat boxes -->
+  <rect x="24"  y="178" width="234" height="62" fill="#1a1612" stroke="#3d3228" stroke-width="1"/>
+  <rect x="283" y="178" width="234" height="62" fill="#1a1612" stroke="#3d3228" stroke-width="1"/>
+  <rect x="542" y="178" width="234" height="62" fill="#1a1612" stroke="#3d3228" stroke-width="1"/>
+
+  <text x="141" y="206" text-anchor="middle" class="mono" font-size="22" fill="#e8834a" font-weight="bold">3.8</text>
+  <text x="141" y="226" text-anchor="middle" class="mono" font-size="10" fill="#8a7a6a" letter-spacing="1">YRS EXPERIENCE</text>
+
+  <text x="400" y="206" text-anchor="middle" class="mono" font-size="22" fill="#e8834a" font-weight="bold">500+</text>
+  <text x="400" y="226" text-anchor="middle" class="mono" font-size="10" fill="#8a7a6a" letter-spacing="1">TABLES IN SCOPE</text>
+
+  <text x="659" y="206" text-anchor="middle" class="mono" font-size="22" fill="#e8834a" font-weight="bold">35%</text>
+  <text x="659" y="226" text-anchor="middle" class="mono" font-size="10" fill="#8a7a6a" letter-spacing="1">YOY BI GROWTH</text>
+</svg>
