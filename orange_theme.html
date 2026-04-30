@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bitan Banerjee – Terminal Portfolio (Green Theme)</title>
+<title>Bitan Banerjee – Terminal Portfolio</title>
 <style>
   :root {
-    --bg:          #000a00; /* Very dark green */
-    --surface:     #0a100a; /* Dark green */
-    --surface2:    #141a14; /* Slightly lighter dark green */
-    --border:      #005500; /* Darker green border */
-    --text:        #aaffaa; /* Light green for main text */
-    --text-dim:    #66aa66; /* Dim green text */
-    --text-bright: #ccffcc; /* Bright green text */
-    --accent:      #00ff00; /* Primary green accent */
-    --accent-dim:  #008800; /* Dim green accent */
-    --warm:        #aaffaa; /* Warm green (can be adjusted for more contrast) */
+    --bg:          #0f0d0b;
+    --surface:     #1a1612;
+    --surface2:    #241e18;
+    --border:      #3d3228;
+    --text:        #d4c4b0;
+    --text-dim:    #8a7a6a;
+    --text-bright: #f5ede0;
+    --accent:      #e8834a;
+    --accent-dim:  #7a3d1e;
+    --warm:        #c8a96e;
     --red-dot:     #ff5f57;
     --yel-dot:     #febc2e;
     --grn-dot:     #28c840;
@@ -36,8 +36,8 @@
     content: '';
     position: fixed; inset: 0;
     background-image:
-      linear-gradient(rgba(0,255,0,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,255,0,0.04) 1px, transparent 1px);
+      linear-gradient(rgba(232,131,74,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,131,74,0.04) 1px, transparent 1px);
     background-size: 16px 16px;
     pointer-events: none; z-index: 0;
   }
@@ -66,13 +66,6 @@
     position: relative; z-index: 1;
     max-width: 820px; margin: 0 auto;
     display: flex; flex-direction: column; gap: 20px;
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
-    transform-origin: top center;
-  }
-  .readme-wrap.minimized {
-    transform: scale(0.9);
-    opacity: 0;
-    pointer-events: none;
   }
 
   /* HERO HEADER BLOCK */
@@ -85,7 +78,7 @@
   }
   .hero-block:hover {
     border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.08);
+    box-shadow: 0 0 20px rgba(232, 131, 74, 0.08);
     transform: translateY(-2px);
     z-index: 10;
   }
@@ -114,35 +107,6 @@
     image-rendering: pixelated;
   }
 
-  .avatar-container {
-    position: relative;
-    flex-shrink: 0;
-  }
-  .pixel-avatar {
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  .avatar-container:hover .pixel-avatar {
-    transform: scale(1.05);
-  }
-  .avatar-hint {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 8px;
-    white-space: nowrap;
-    font-size: 11px;
-    color: var(--accent);
-    text-shadow: 0 0 5px var(--accent);
-    letter-spacing: 0.1em;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-  .avatar-container:hover .avatar-hint {
-    opacity: 1;
-  }
 
   .pixel-avatar .px { width:var(--pixel-size); height:var(--pixel-size); background:transparent; transition: background 0.1s ease; }
   .pixel-avatar .px.on  { background: var(--accent); box-shadow: 0 0 6px var(--accent); }
@@ -168,8 +132,8 @@
   
   /* PHOSPHOR GLOW EFFECTS */
   .hero-ascii .dim { color: var(--text-dim); }
-  .hero-ascii .hi  { color: var(--accent); font-weight: bold; text-shadow: 0 0 6px rgba(0, 255, 0, 0.5); }
-  .hero-ascii .gr  { color: var(--warm); text-shadow: 0 0 5px rgba(170, 255, 170, 0.4); }
+  .hero-ascii .hi  { color: var(--accent); font-weight: bold; text-shadow: 0 0 6px rgba(232, 131, 74, 0.5); }
+  .hero-ascii .gr  { color: var(--warm); text-shadow: 0 0 5px rgba(200, 169, 110, 0.4); }
 
   .stat-row {
     display: grid; grid-template-columns: repeat(3,1fr);
@@ -184,9 +148,9 @@
   .stat-block:hover {
     border-color: var(--accent);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 255, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(232, 131, 74, 0.05);
   }
-  .stat-num { font-size: 22px; color: var(--accent); font-weight: bold; text-shadow: 0 0 8px rgba(0, 255, 0, 0.6); }
+  .stat-num { font-size: 22px; color: var(--accent); font-weight: bold; text-shadow: 0 0 8px rgba(232, 131, 74, 0.6); }
   .stat-lbl { font-size: 10px; color: var(--text-dim); margin-top: 2px; letter-spacing: 0.08em; }
 
   /* INTERACTIVE TERMINAL WINDOWS */
@@ -198,7 +162,7 @@
   }
   .term:hover {
     border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.08);
+    box-shadow: 0 0 20px rgba(232, 131, 74, 0.08);
     transform: translateY(-2px);
     z-index: 10;
   }
@@ -218,7 +182,7 @@
     transition: background 0.3s ease;
   }
   .term:hover .term-bar {
-    background: #0a140a; /* Darker green on hover */
+    background: #1f140e;
   }
 
   .term-dots {
@@ -253,14 +217,10 @@
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 6px solid transparent;
+    border-right: 6px solid var(--accent);
+    animation: typing 1.5s steps(40, end), blink-caret 0.75s step-end infinite;
     padding-right: 4px;
     line-height: 1.1; 
-    max-width: 0;
-  }
-  .term.animate .cmd-text {
-    border-right-color: var(--accent);
-    animation: typing 1.5s steps(40, end) forwards, blink-caret 0.75s 1.5s step-end infinite;
   }
 
   @keyframes typing {
@@ -276,25 +236,15 @@
   }
   @keyframes blink-header-cursor {
     from, to { color: transparent; text-shadow: none; }
-    50% { color: var(--accent); text-shadow: 0 0 6px rgba(0, 255, 0, 0.5); }
+    50% { color: var(--accent); text-shadow: 0 0 6px rgba(232, 131, 74, 0.5); }
   }
 
-  .output-text, .badge-section, .pipeline-wrap, .tree-wrap, .log-wrap, .badge-row {
-    opacity: 0;
-  }
-  .term.animate .output-text,
-  .term.animate .badge-section,
-  .term.animate .pipeline-wrap,
-  .term.animate .tree-wrap,
-  .term.animate .log-wrap,
-  .term.animate .badge-row {
-    animation: fadeIn 1s ease 1.6s forwards;
-  }
-  @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
-  .output-text b { color: var(--text-bright); text-shadow: 0 0 2px rgba(204,255,204,0.2); }
+  .output-text { color: var(--text); font-size: 13px; line-height: 1.8; animation: fadeIn 2s ease forwards; opacity: 0; }
+  @keyframes fadeIn { 0% { opacity: 0; } 50% {opacity: 0;} 100% { opacity: 1; } }
+  .output-text b { color: var(--text-bright); text-shadow: 0 0 2px rgba(255,255,255,0.2); }
 
   /* BADGES */
-  .badge-section { margin-bottom: 14px; }
+  .badge-section { margin-bottom: 14px; animation: fadeIn 2s ease forwards; opacity: 0; }
   .badge-section:last-child { margin-bottom: 0; }
   .badge-section-label {
     font-size: 10px; color: var(--text-dim);
@@ -313,15 +263,15 @@
   }
   .badge:hover {
     border-color: var(--accent); color: var(--accent);
-    background: rgba(0,255,0,0.07);
+    background: rgba(232,131,74,0.07);
     transform: scale(1.05); /* Restored Micro-animation scale */
-    box-shadow: 0 2px 8px rgba(0, 255, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(232, 131, 74, 0.1);
   }
   .badge svg { width:13px; height:13px; fill:currentColor; flex-shrink:0; opacity:.7; }
   .badge:hover svg { opacity:1; }
 
   /* ARCHITECTURE PIPELINE */
-  .pipeline-wrap { overflow-x: auto; padding: 10px 0; white-space: nowrap; font-size: 13px; }
+  .pipeline-wrap { overflow-x: auto; padding: 10px 0; white-space: nowrap; font-size: 13px; animation: fadeIn 2s ease forwards; opacity: 0; }
   .pipe-node { 
     display: inline-block; padding: 4px 8px; border: 1px solid var(--border); 
     background: var(--surface2); color: var(--accent); cursor: pointer; 
@@ -339,7 +289,7 @@
   .pipe-tooltip { margin-top: 15px; color: var(--text-dim); height: 18px; font-style: italic; }
 
   /* INTERACTIVE DIRECTORY TREE */
-  .tree-wrap { margin-top: 10px; }
+  .tree-wrap { animation: fadeIn 2s ease forwards; opacity: 0; margin-top: 10px; }
   .tree-item { margin-bottom: 6px; }
   .tree-folder {
     color: var(--accent); cursor: pointer; user-select: none; font-weight: bold; 
@@ -347,7 +297,7 @@
     transition: all 0.2s ease; border-radius: 2px;
   }
   .tree-folder:hover { 
-    background: rgba(0, 255, 0, 0.05); text-shadow: 0 0 5px rgba(0, 255, 0, 0.4); 
+    background: rgba(232, 131, 74, 0.05); text-shadow: 0 0 5px rgba(232, 131, 74, 0.4); 
   }
   .toggle-icon { display: inline-block; width: 24px; color: var(--text-dim); font-weight: normal; }
   .tree-item.open .toggle-icon { color: var(--warm); }
@@ -358,17 +308,17 @@
     border-left: 1px dashed var(--border); margin-left: 12px; 
     padding-top: 6px; padding-bottom: 10px; margin-top: 4px; line-height: 1.6;
   }
-  .tree-content b { color: var(--text-bright); text-shadow: 0 0 2px rgba(204,255,204,0.2); }
+  .tree-content b { color: var(--text-bright); text-shadow: 0 0 2px rgba(255,255,255,0.2); }
   .tree-item.open .tree-content { display: block; animation: fadeIn 0.3s ease forwards; }
 
   /* MISC TAGS */
   .log-item { 
-    display: flex; gap: 10px; padding: 9px 6px; border-bottom: 1px solid rgba(0,85,0,0.6); align-items: flex-start; 
+    display: flex; gap: 10px; padding: 9px 6px; border-bottom: 1px solid rgba(61,50,40,0.6); align-items: flex-start; 
     transition: all 0.2s ease;
     border-radius: 2px;
   }
   .log-item:hover {
-    background: rgba(0, 255, 0, 0.04);
+    background: rgba(232, 131, 74, 0.04);
     transform: translateX(4px);
     border-bottom-color: var(--accent);
   }
@@ -382,55 +332,17 @@
     color: var(--surface); /* Inverted text */
     border-color: var(--accent);
   }
-  .log-tag.green { color: var(--warm);  border-color: #008800; background: #001a00; } /* Adjusted for green theme */
-  .log-tag.warn  { color: #e8c44a; border-color: #4a3a10; background: #1e1a08; } /* Kept original for warning */
+  .log-tag.green { color: var(--warm);  border-color: #3a2f10; background: #1a1608; }
+  .log-tag.warn  { color: #e8c44a; border-color: #4a3a10; background: #1e1a08; }
   
   .log-item:hover .log-tag.green { background: var(--warm); color: var(--surface); border-color: var(--warm); }
   .log-item:hover .log-tag.warn { background: #e8c44a; color: var(--surface); border-color: #e8c44a; }
 
   .log-val { color: var(--text); font-size: 13px; line-height: 1.65; }
-  .log-val b { color: var(--text-bright); text-shadow: 0 0 2px rgba(204,255,204,0.2); }
+  .log-val b { color: var(--text-bright); text-shadow: 0 0 2px rgba(255,255,255,0.2); }
 
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
-
-  .achievement-badge {
-    position: fixed;
-    bottom: -100px; /* Start off-screen */
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--warm);
-    padding: 10px 20px;
-    z-index: 10000;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    opacity: 0;
-    pointer-events: none;
-  }
-  .achievement-badge.show { bottom: 30px; opacity: 1; }
-  .achievement-badge svg { width: 16px; height: 16px; fill: currentColor; }
-
-  #si-overlay {
-    position: fixed; inset: 0; z-index: 10001;
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.5s ease 0.2s; /* Delayed fade in */
-    background: rgba(0, 10, 0, 0.85);
-  }
-  #si-overlay.active { opacity: 1; pointer-events: all; }
-  .si-container {
-    border: 2px solid var(--accent); background: var(--surface);
-    box-shadow: 0 0 30px rgba(0, 255, 0, 0.15); display: flex; flex-direction: column;
-  }
-  .si-instructions {
-    text-align: center; font-size: 12px; color: var(--text-dim);
-    padding: 12px; border-top: 1px dashed var(--border); letter-spacing: 0.1em;
-  }
 
 </style>
 </head>
@@ -439,10 +351,7 @@
 
   <div class="hero-block">
     <div class="hero-content">
-      <div class="avatar-container">
-        <div class="pixel-avatar" id="pxav"></div>
-        <div class="avatar-hint">[ LAUNCH GAME ]</div>
-      </div>
+      <div class="pixel-avatar" id="pxav"></div>
       <div class="hero-ascii">
 <span class="dim">┌───────────────────────────────────────────────────────────────────────────────┐</span>
 <span class="hi">██</span>
@@ -635,12 +544,12 @@
       <div class="log-wrap" style="margin-top: 10px;">
         <div class="badge-row" style="margin-bottom:14px">
           <span class="badge"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>HackerRank — SQL Advanced</span>
-          <span class="badge"><svg viewBox="0 0 24 24"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.96 3.403 5.96h2.03v-2.867s-.109-3.403 3.35-3.403h5.769s3.24.052 3.24-3.131V3.19S18.28 0 11.914 0zm-3.2 1.848a1.046 1.046 0 1 1 0 2.093 1.046 1.046 0 0 1 0-2.093zM12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752H12.98v-.826h8.12S24 18.211 24 12.031c0-6.18-3.403-5.96-3.403-5.96h-2.03v2.867s.109 3.403-3.35 3.403H9.448s-3.24-.052-3.24 3.131v5.338S5.72 24 12.086 24zm3.2-1.848a1.046 1.046 0 1 1 0-2.093 1.046 1.046 0 0 1 0 2.093z"/></svg>Cutshort — Python</span>
+          <span class="badge"><svg viewBox="0 0 24 24"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.96 3.403 5.96h2.03v-2.867s-.109-3.403 3.35-3.403h5.769s3.24.052 3.24-3.131V3.19S18.28 0 11.914 0zm-3.2 1.848a1.046 1.046 0 1 1 0 2.093 1.046 1.046 0 0 1 0-2.093z"/></svg>Cutshort — Python</span>
         </div>
         <div class="log-item"><span class="log-tag warn">AWARD</span><span class="log-val"><b>SPOT Award</b> — exceptional development skills and product ownership.</span></div>
-        <div class="log-item"><span class="log-tag warn">CERT_01</span><span class="log-val">Certified in <b>Advanced SQL</b> — HackerRank.</span></div>
-        <div class="log-item"><span class="log-tag warn">CERT_02</span><span class="log-val">Certified in <b>Python Skills</b> — Cutshort.</span></div>
-        <div class="log-item"><span class="log-tag warn">EDU</span><span class="log-val">B.Tech CSE — <b>S'O'A University, Bhubaneswar</b> · CGPA <b>8.27</b> · Apr 2022</span></div>
+        <div class="log-item"><span class="log-tag green">CERT_01</span><span class="log-val">Certified in <b>Advanced SQL</b> — HackerRank.</span></div>
+        <div class="log-item"><span class="log-tag green">CERT_02</span><span class="log-val">Certified in <b>Python Skills</b> — Cutshort.</span></div>
+        <div class="log-item"><span class="log-tag green">EDU</span><span class="log-val">B.Tech CSE — <b>S'O'A University, Bhubaneswar</b> · CGPA <b>8.27</b> · Apr 2022</span></div>
       </div>
     </div>
   </div>
@@ -673,7 +582,7 @@
       <div style="padding: 18px 20px 0;">
         <div class="cmd-line"><span class="cmd-prompt">~</span><span class="cmd-path">$</span><span class="cmd-text">./execute_dyno.sh --play</span></div>
       </div>
-      <canvas id="dino-canvas" width="780" height="150" style="display:block; width:100%; background: #000a00; border-top: 1px dashed #005500; cursor: pointer;"></canvas>
+      <canvas id="dino-canvas" width="780" height="150" style="display:block; width:100%; background: #0f0d0b; border-top: 1px dashed #3d3228; cursor: pointer;"></canvas>
     </div>
   </div>
 
@@ -681,18 +590,6 @@
     ██▓▒░ EOF — Bitan Banerjee · Data Engineer · 2026 ░▒▓██
   </div>
 
-</div>
-
-<div id="vim-achievement" class="achievement-badge">
-  <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-  <span>Ah, a Vim user!</span>
-</div>
-
-<div id="si-overlay">
-  <div class="si-container">
-    <canvas id="si-canvas" width="600" height="300"></canvas>
-    <div class="si-instructions">Press [ESC] to exit | ⬅ ➡ ⬆ ⬇ Move | [SPACE] Shoot / Restart</div>
-  </div>
 </div>
 
 <script>
@@ -764,10 +661,10 @@ let frames = 0;
 const dino = { x: 50, y: 100, w: 20, h: 22, dy: 0, jump: -9, gravity: 0.5, grounded: true };
 let obstacles = [];
 
-const colorBg = '#000a00';
-const colorDino = '#00ff00'; 
-const colorCactus = '#aaffaa'; 
-const colorText = '#66aa66'; 
+const colorBg = '#0f0d0b';
+const colorDino = '#e8834a'; 
+const colorCactus = '#c8a96e'; 
+const colorText = '#8a7a6a'; 
 
 function resetGame() {
   dino.y = 100;
@@ -875,6 +772,12 @@ function jump() {
   }
 }
 
+window.addEventListener('keydown', (e) => {
+  if (e.code === 'Space') {
+    e.preventDefault(); 
+    jump();
+  }
+});
 canvas.addEventListener('mousedown', jump);
 canvas.addEventListener('touchstart', (e) => { e.preventDefault(); jump(); }, {passive: false});
 
@@ -884,366 +787,6 @@ drawGround();
 dino.y = 100;
 drawDino();
 drawUI();
-
-// Logic: Scroll-Triggered Animations
-document.addEventListener('DOMContentLoaded', () => {
-  const animatedTerms = document.querySelectorAll('.term');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const term = entry.target;
-        term.classList.add('animate'); // Add a class to the parent terminal
-        observer.unobserve(term); // Animate only once
-      }
-    });
-  }, {
-    threshold: 0.2 // Trigger when 20% of the element is visible
-  });
-
-  animatedTerms.forEach(el => {
-    observer.observe(el);
-  });
-});
-
-// Logic: Konami Code Easter Egg
-const konamiCode = [
-  'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
-  'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
-  'KeyB', 'KeyA'
-];
-let konamiIndex = 0;
-
-let vimAchievementUnlocked = false;
-
-function showVimAchievement() {
-  if (vimAchievementUnlocked) return;
-  vimAchievementUnlocked = true;
-
-  const badge = document.getElementById('vim-achievement');
-  badge.classList.add('show');
-
-  setTimeout(() => {
-    badge.classList.remove('show');
-  }, 4000); // Hide after 4 seconds
-}
-
-function triggerMatrixRain() {
-  const rainCanvas = document.createElement('canvas');
-  rainCanvas.style.position = 'fixed';
-  rainCanvas.style.top = '0';
-  rainCanvas.style.left = '0';
-  rainCanvas.style.width = '100%';
-  rainCanvas.style.height = '100%';
-  rainCanvas.style.zIndex = '9999';
-  rainCanvas.style.opacity = '0';
-  rainCanvas.style.transition = 'opacity 0.5s ease-in';
-  document.body.appendChild(rainCanvas);
-
-  const rainCtx = rainCanvas.getContext('2d');
-  rainCanvas.width = window.innerWidth;
-  rainCanvas.height = window.innerHeight;
-
-  setTimeout(() => { rainCanvas.style.opacity = '1'; }, 10);
-
-  const letters = 'ビットコインキャッシュイーサリアムライトコイン1234567890';
-  const fontSize = 16;
-  const columns = rainCanvas.width / fontSize;
-  const drops = Array(Math.floor(columns)).fill(1);
-
-  function drawRain() {
-    rainCtx.fillStyle = 'rgba(0, 10, 0, 0.05)';
-    rainCtx.fillRect(0, 0, rainCanvas.width, rainCanvas.height);
-    rainCtx.fillStyle = '#00ff00';
-    rainCtx.font = fontSize + 'px ' + getComputedStyle(document.body).fontFamily;
-    for (let i = 0; i < drops.length; i++) {
-      const text = letters[Math.floor(Math.random() * letters.length)];
-      rainCtx.fillText(text, i * fontSize, drops[i] * fontSize);
-      if (drops[i] * fontSize > rainCanvas.height && Math.random() > 0.975) drops[i] = 0;
-      drops[i]++;
-    }
-  }
-  const rainInterval = setInterval(drawRain, 33);
-  setTimeout(() => {
-    rainCanvas.style.opacity = '0';
-    setTimeout(() => {
-      clearInterval(rainInterval);
-      if (document.body.contains(rainCanvas)) document.body.removeChild(rainCanvas);
-    }, 500);
-  }, 5000);
-}
-
-window.addEventListener('keydown', (e) => {
-  if (siActive) {
-    if (e.code === 'Escape') { stopSpaceInvaders(); return; }
-    if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Space'].includes(e.code)) {
-      e.preventDefault();
-      siKeys[e.code] = true;
-      if ((siState === 'GAME_OVER' || siState === 'WIN') && e.code === 'Space') {
-        initSpaceImpact(); // Restart game
-      }
-    }
-    return; // Block other shortcuts during game
-  }
-
-  const activeEl = document.activeElement;
-  const isTyping = activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.isContentEditable;
-
-  // Handle j/k/space unless the user is typing in a field
-  if (!isTyping) {
-    switch (e.code) {
-      case 'KeyJ':
-        e.preventDefault();
-        window.scrollBy({ top: 60, left: 0, behavior: 'smooth' });
-        showVimAchievement();
-        break;
-      case 'KeyK':
-        e.preventDefault();
-        window.scrollBy({ top: -60, left: 0, behavior: 'smooth' });
-        showVimAchievement();
-        break;
-      case 'Space':
-        e.preventDefault(); 
-        jump(); // For the dino game
-        break;
-    }
-  }
-
-  // Konami Code Easter Egg
-  if (e.code === konamiCode[konamiIndex]) {
-    konamiIndex++;
-    if (konamiIndex === konamiCode.length) {
-      triggerMatrixRain();
-      konamiIndex = 0;
-    }
-  } else {
-    // Reset if the wrong key is pressed.
-    konamiIndex = 0;
-  }
-});
-
-window.addEventListener('keyup', (e) => {
-  if (siActive && ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Space'].includes(e.code)) {
-    siKeys[e.code] = false;
-  }
-});
-
-// Logic: Full Space Impact Game
-const avatar = document.getElementById('pxav');
-let siActive = false;
-const siCanvas = document.getElementById('si-canvas');
-const siCtx = siCanvas.getContext('2d');
-let siReq;
-let siKeys = {};
-let siStars = [];
-
-const siSprites = {
-  p: [[0,1,0,0],[0,1,1,0],[1,1,1,1],[0,1,1,0],[0,1,0,0]],
-  e1: [[0,0,1,0],[0,1,1,1],[1,1,1,1],[0,1,1,1],[0,0,1,0]],
-  e2: [[0,1,1,1],[1,1,0,1],[1,1,1,1],[1,1,0,1],[0,1,1,1]],
-  boss: [[0,0,1,1,1],[0,1,1,0,1],[1,1,1,1,1],[1,1,1,1,1],[1,1,1,1,1],[0,1,1,0,1],[0,0,1,1,1]]
-};
-
-let siPlayer, siEnemies, siBullets, siState, siLastShot;
-let siScore = 0;
-let siMoveTimer = 0;
-let siBoss = null;
-
-const siColorSurface = '#0a100a';
-const siColorAccent  = '#00ff00';
-const siColorWarm    = '#aaffaa';
-const siColorRed     = '#ff5f57';
-
-function drawArt(ctx, pat, x, y, size, color) {
-  ctx.fillStyle = color;
-  for(let r=0; r<pat.length; r++) {
-    for(let c=0; c<pat[r].length; c++) {
-      if(pat[r][c]) ctx.fillRect(x + c*size, y + r*size, size, size);
-    }
-  }
-}
-
-function collide(a, b) {
-  return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
-}
-
-function initSpaceImpact() {
-  siActive = true;
-  document.querySelector('.readme-wrap').classList.add('minimized');
-  document.getElementById('si-overlay').classList.add('active');
-  
-  siPlayer = { x: 30, y: 140, w: 12, h: 15, speed: 4, hp: 3 };
-  siEnemies = [];
-  siBullets = [];
-  siState = 'PLAYING';
-  siScore = 0;
-  siMoveTimer = 0;
-  siLastShot = 0;
-  siBoss = null;
-
-  // Setup background starfield
-  siStars = [];
-  for(let i=0; i<40; i++) {
-    siStars.push({x: Math.random() * siCanvas.width, y: Math.random() * siCanvas.height, speed: Math.random() * 1.5 + 0.5});
-  }
-
-  siLoop();
-}
-
-function stopSpaceInvaders() {
-  siActive = false;
-  cancelAnimationFrame(siReq);
-  document.querySelector('.readme-wrap').classList.remove('minimized');
-  document.getElementById('si-overlay').classList.remove('active');
-}
-
-function siLoop() {
-  if(!siActive) return;
-  siCtx.fillStyle = siColorSurface;
-  siCtx.fillRect(0, 0, siCanvas.width, siCanvas.height);
-
-  // Starfield logic
-  siCtx.fillStyle = 'rgba(170, 255, 170, 0.3)';
-  siStars.forEach(s => {
-    s.x -= s.speed;
-    if(s.x < 0) { s.x = siCanvas.width; s.y = Math.random() * siCanvas.height; }
-    siCtx.fillRect(s.x, s.y, 2, 2);
-  });
-
-  if (siState === 'PLAYING' || siState === 'BOSS') {
-    // Player Move
-    if (siKeys['ArrowLeft'] && siPlayer.x > 0) siPlayer.x -= siPlayer.speed;
-    if (siKeys['ArrowRight'] && siPlayer.x < siCanvas.width - siPlayer.w) siPlayer.x += siPlayer.speed;
-    if (siKeys['ArrowUp'] && siPlayer.y > 0) siPlayer.y -= siPlayer.speed;
-    if (siKeys['ArrowDown'] && siPlayer.y < siCanvas.height - siPlayer.h) siPlayer.y += siPlayer.speed;
-    
-    // Player Shoot
-    if (siKeys['Space'] && Date.now() - siLastShot > 300) {
-      siBullets.push({ x: siPlayer.x + siPlayer.w, y: siPlayer.y + siPlayer.h/2 - 2, w: 8, h: 4, dx: 10, isPlayer: true });
-      siLastShot = Date.now();
-    }
-
-    if (siState === 'PLAYING') {
-      siMoveTimer++;
-      // Faster spawn rate as score increases
-      if (siMoveTimer > 90 - Math.min(40, siScore / 6)) {
-        siMoveTimer = 0;
-        let type = Math.random() > 0.5 ? 'e1' : 'e2';
-        let hp = type === 'e1' ? 1 : 3;
-        let speed = type === 'e1' ? 2 : 1;
-        siEnemies.push({ x: siCanvas.width, y: Math.random() * (siCanvas.height - 30), type: type, hp: hp, w: 12, h: 15, speed: speed });
-      }
-      // Phase Transition
-      if (siScore >= 250 && !siBoss) {
-        siState = 'BOSS';
-        siEnemies = []; 
-        // Boss is larger, scaling size by 6 (5x7 grid)
-        siBoss = { x: siCanvas.width - 60, y: 100, w: 30, h: 42, hp: 50, maxHp: 50, dir: 1, speed: 2 };
-      }
-    }
-
-    // Enemies Logic
-    for (let i = siEnemies.length - 1; i >= 0; i--) {
-      let e = siEnemies[i];
-      e.x -= e.speed;
-      if (Math.random() < 0.005 + (siScore / 20000)) {
-        siBullets.push({ x: e.x, y: e.y + e.h/2, w: 6, h: 3, dx: -4, isPlayer: false });
-      }
-      if (e.x + e.w < 0) {
-        siEnemies.splice(i, 1);
-      } else if (collide(siPlayer, e)) {
-        siEnemies.splice(i, 1);
-        siPlayer.hp--;
-        if (siPlayer.hp <= 0) siState = 'GAME_OVER';
-      }
-    }
-
-    // Boss Logic
-    if (siState === 'BOSS' && siBoss) {
-      siBoss.y += 1.5 * siBoss.dir;
-      if (siBoss.y <= 0 || siBoss.y + siBoss.h >= siCanvas.height) siBoss.dir *= -1;
-      
-      if (Math.random() < 0.04) {
-        siBullets.push({ x: siBoss.x, y: siBoss.y + Math.random() * siBoss.h, w: 8, h: 4, dx: -5, isPlayer: false });
-      }
-      if (collide(siPlayer, siBoss)) {
-        siPlayer.hp--;
-        if (siPlayer.hp <= 0) siState = 'GAME_OVER';
-      }
-    }
-
-    // Bullets Logic
-    for (let i = siBullets.length - 1; i >= 0; i--) {
-      let b = siBullets[i];
-      b.x += b.dx;
-      if (b.x < 0 || b.x > siCanvas.width) { siBullets.splice(i, 1); continue; }
-      
-      siCtx.fillStyle = b.isPlayer ? siColorAccent : siColorRed;
-      siCtx.fillRect(b.x, b.y, b.w, b.h);
-
-      if (b.isPlayer) {
-        let hit = false;
-        if (siState === 'PLAYING') {
-          for (let j = siEnemies.length - 1; j >= 0; j--) {
-            let e = siEnemies[j];
-            if (collide(b, e)) {
-              e.hp--;
-              siBullets.splice(i, 1);
-              hit = true;
-              if (e.hp <= 0) {
-                siScore += e.type === 'e1' ? 10 : 20;
-                siEnemies.splice(j, 1);
-              }
-              break;
-            }
-          }
-        } else if (siState === 'BOSS' && siBoss) {
-          if (collide(b, siBoss)) {
-            siBoss.hp--;
-            siBullets.splice(i, 1);
-            siScore += 5;
-            hit = true;
-            if (siBoss.hp <= 0) siState = 'WIN';
-          }
-        }
-      } else {
-        if (collide(b, siPlayer)) {
-          siPlayer.hp--;
-          siBullets.splice(i, 1);
-          if (siPlayer.hp <= 0) siState = 'GAME_OVER';
-        }
-      }
-    }
-  }
-
-  siCtx.fillStyle = siColorWarm;
-  siCtx.font = "14px 'Courier New', monospace";
-  siCtx.fillText("SCORE: " + siScore + "  HP: " + siPlayer.hp, 15, 25);
-  
-  if (siPlayer.hp > 0) {
-    drawArt(siCtx, siSprites.p, siPlayer.x, siPlayer.y, 3, siColorAccent);
-  }
-  
-  siEnemies.forEach(e => drawArt(siCtx, siSprites[e.type], e.x, e.y, 3, siColorWarm));
-  
-  if (siState === 'BOSS' && siBoss) {
-    drawArt(siCtx, siSprites.boss, siBoss.x, siBoss.y, 6, siColorRed);
-    siCtx.fillStyle = '#330000'; siCtx.fillRect(siBoss.x, siBoss.y - 12, siBoss.w, 4);
-    siCtx.fillStyle = siColorRed; siCtx.fillRect(siBoss.x, siBoss.y - 12, siBoss.w * (siBoss.hp / siBoss.maxHp), 4);
-  }
-
-  if (siState === 'GAME_OVER' || siState === 'WIN') {
-    siCtx.fillStyle = siColorAccent;
-    siCtx.font = "20px 'Courier New', monospace";
-    siCtx.fillText(siState === 'WIN' ? 'SECTOR CLEARED' : 'SHIP DESTROYED', siCanvas.width/2 - 95, siCanvas.height/2);
-    siCtx.font = "12px 'Courier New', monospace";
-    siCtx.fillText("PRESS [SPACE] TO RESTART", siCanvas.width/2 - 85, siCanvas.height/2 + 30);
-  }
-
-  siReq = requestAnimationFrame(siLoop);
-}
-
-avatar.addEventListener('click', initSpaceImpact);
 </script>
 </body>
 </html>
